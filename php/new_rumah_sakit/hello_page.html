@@ -1,0 +1,107 @@
+<html>
+    <style>
+
+        @font-face{
+            font-family : "uha";
+            src : url("UH.ttf") format("ttf");
+            src : url("UH.woff") format("woff");
+        }
+
+        .nav-bar {
+            height : content;
+        }
+
+        .web-page {
+            width : 100%; margin : 10px auto;
+        }
+
+        .outer-wrapper{
+            padding : 10px; width : content; height : content;
+        }
+
+        .inner-wrapper{
+            width : content; height : content; padding : 0px 10px; margin : auto;
+        }
+
+        .float-left {
+            float : left;
+        }
+
+        .float-right {
+            float : right;
+        }
+
+        .float-middle{
+            position: absolute; top:  45%; left: 50%; transform: translate(-50%,-50%);
+        }
+
+        body {
+            background-color : white;
+        }
+
+        body > * {
+            display : inline-block;
+        }
+
+        div #hospital-logo{
+            content: url("hospital-logo.png");
+            width : 88px; height : 88px; margin : auto 20px;
+        }
+
+        #web-title{
+            letter-spacing: 1px;
+        }
+
+        #help-button {
+            background-color : transparent; border : 0px;
+            font-family : "Ciutadella R"; font-size : 15px; color : black;
+            margin : 0px 10px; transition : 0.25s;
+        }
+
+        #help-button:hover{
+            color : whitesmoke ;cursor : pointer;
+        }
+
+        #true-button {
+            background-color : transparent;
+            border : 2px solid  lightslategrey; border-radius : 10px; box-shadow : 0px 2px 0px lightslategrey;
+            font-family : "superstar"; font-size : 20px;
+            padding : 3px 10px; margin : 5px auto;
+            transition : 0.25s;
+        }
+
+        #true-button:hover {
+            background-color : #1cafa1; cursor : pointer; color : white;
+        }
+
+        #vertical-line{
+            margin : auto; height : 88px; width : 2px; background-color : black;
+        }
+
+    </style>
+
+    <body>
+        <div class="web-page">
+            <div class="nav-bar">
+                <a href="petunjuk-page.html"><input type="button" class="float-right" id="help-button" value="Petunjuk Penggunaan"></a>
+                <a href="about-page.html"><input type="button" class="float-right" id="help-button" value="Tentang Kami"></a>
+            </div>
+            <div class="float-middle">
+                <div class="outer-wrapper float-left" style="display : inline-table">
+                    <div id="hospital-logo" class="float-left"></div>
+                    <div class="inner-wrapper float-right">
+                        <div id="web-title" style="font-family : uha; font-size : 30px; padding-top : 5px">User Portal</div>
+                        <a href="login_page.php"><input type="button" id="true-button" value="LOGIN"></a>
+                    </div>
+                    <div class="inner-wrapper float-right" style="display : inline-table">
+                        <div id="vertical-line"></div>
+                    </div>
+                    <div class="inner-wrapper float-right" style="display : inline-table">
+                        <div id="web-title" style="font-family : uha; font-size:56px">RUMAH SAKIT</div>
+                        <div id="web-title" style="font-family : uha; font-size:43px">DUDUNG PRATAMA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

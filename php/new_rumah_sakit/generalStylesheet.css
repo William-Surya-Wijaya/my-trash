@@ -1,0 +1,308 @@
+@font-face{
+    font-family : "superstar";
+    src : url("superstar.ttf") format("ttf");
+    src : url("superstar.woff") format("woff");
+}
+
+@font-face{
+    font-family : "uha";
+    src : url("UH.ttf") format("ttf");
+    src : url("UH.woff") format("woff");
+}
+
+@keyframes folderHover{
+    0% {
+        filter: drop-shadow(0px 0px 0px transparent);
+    }
+    45% {
+        filter: drop-shadow(0px 0px 4px #ddeeea);
+    }
+    65% {
+        filter: drop-shadow(0px 0px 6px #94ecd9);
+    }
+    90% {
+        filter: drop-shadow(0px 0px 10px #50f5ce);
+    }
+    100% {
+        filter: drop-shadow(0px 0px 0px transparent);
+    }
+}
+
+body {
+    background-color : white;
+}
+
+table tr td{
+    padding : 5px;
+}
+
+a{
+    color : #333c57;
+    text-decoration : none;
+}
+
+a:hover {
+    color : blue;
+}
+
+table{
+    width : 90%; margin : auto;
+    border : 2px solid #333c57; border-radius : 10px;
+    box-shadow : 0px 3px 0px #333c57; font-family : "superstar";
+}
+
+table tr:nth-child(even){
+    background-color : #ebf5f4;
+}
+
+table tr:nth-child(odd){
+    background-color : #c8e8e6;
+}
+
+table tr td{
+    border-bottom : 1px solid #3baaa1; border-right : 1px solid #3baaa1;
+    padding : 3px 5px;
+}
+
+table tr:first-child td:first-child{
+    border-top-left-radius : 8px;
+}
+
+table tr:first-child td:last-child{
+    border-top-right-radius : 8px;
+}
+
+table tr td:last-child{
+    border-right : 0px;
+}
+
+table tr:first-child{
+    background-color : #3baaa1; color : #f4f4f4;
+    font-family : "superstar"; font-size : 20px; letter-spacing : 2px;
+}
+
+table tr:last-child td{
+    border-bottom : 0px;
+}
+
+table tr:last-child td:first-child{
+    border-bottom-left-radius : 8px;
+}
+
+table tr:last-child td:last-child{
+    border-right : 0px;  border-bottom-right-radius : 8px; border-right : 0px;
+}
+
+table tr th:first-child{
+    border-top-left-radius : 8px; border-top-right-radius : 8px;
+}
+
+select option {
+    color : #3baaa1;
+}
+
+ul {
+    list-style-type : none;
+}
+
+ul:first-child{
+    padding : 0px;
+}
+
+ul:not(:first-child) li:not(:first-child){
+    padding : 0px 0px 0px 13px;
+}
+
+ul:not(:first-child) li:first-child::before{
+    content : "↳";
+}
+
+button{
+    border : 0px; background-color : transparent; font-family : "superstar"; font-size : 15px;
+}
+
+.autocomplete {
+    position: relative; display: inline-block;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border : 1px solid #333c57; border-radius : 8px;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #3baaa1; 
+    border-bottom: 1px solid #333c57; 
+}
+
+
+.autocomplete-items div:first-child {
+    border-top-left-radius : 8px; border-top-right-radius : 8px;
+}
+
+.autocomplete-items div:last-child {
+    border-bottom-left-radius : 8px; border-bottom-right-radius : 8px;
+    border-bottom : 0px;
+}
+
+.autocomplete-items div:hover {
+    background-color: #c8e8e6;
+    color : #333c57;
+}
+
+.autocomplete-active {
+    background-color: #c8e8e6 !important; 
+    color: #333c57; transition : 0.25s;
+}
+
+.web-page{
+    width : 100%; display : flex; justify-content : center; align-items : center;
+}
+
+.disInlineBlock{
+    display : inline-block;
+}
+
+.files-navigation{
+    height : content;
+}
+
+.card {
+    background-color : transparent;
+    height : content; width : content;
+    border : 2px solid #333c57; border-radius : 8px; box-shadow : 0px 4px 0px #333c
+}
+
+.card-content {
+    padding : 20px;
+}
+
+.content-wrapper {
+    height : content; width : 100%;
+}
+
+.float-left{
+    float : left;
+}
+
+.float-right{
+    float : right;
+}
+
+.form-answer-bar{
+    font-family : "superstar"; font-size : 20px;
+    background-color : white; color :#3baaa1;
+    border : 1px solid #3baaa1; border-radius : 10px;
+    text-align : center;
+}
+
+.mform-answer-bar{
+    font-family : "superstar"; font-size : 20px;
+    background-color : transparent; color :#333c57;
+    border : 0px solid #3baaa1; border-radius : 10px;
+    text-align : center;
+}
+
+.mform-answer-bar:focus{
+    outline : none;
+}
+
+.true-small-button {
+    background-color : #333c57; color : white;
+    border : 0px; border-radius : 6px;
+    font-family : "superstar"; font-size : 15px;
+    padding : 2px 4px; margin : 5px auto;
+    transition : 0.25s; width : 55px;
+}
+
+.true-small-button:hover {
+    background-color : #45cabf; cursor : pointer;
+}
+
+.nav-button {
+    border : 0px; background-color : transparent;
+}
+
+.nav-button:hover {
+    animation-name : folderHover; animation-duration : 1s; animation-fill-mode : forwards;
+    animation-timing-function : ease-out; cursor : pointer;
+}
+
+.fixed-element{
+    position : fixed;
+    z-index : 100;
+}
+
+#card-title {
+    text-align : center; letter-spacing : 1px;
+}
+
+#hospital-logo {
+    content : url("hospital-logo.png");
+    width : 88px; height : 88px; margin : auto;
+}
+
+#password-ic{
+    content : url("password-ic.png");
+    width : 20px; height : 20px;
+}
+
+#user-pp-def{
+    content : url("user-pp-def.png");
+    width : 20px; height : 20px;
+}
+
+#id-ic{
+    content : url("id-ic.png");
+    width : 20px; height : 20px;
+}
+
+#ha-er{
+    background-color : #3baaa1;
+    height : 3px; width : content; border-radius : 5px;
+    margin : 15px 15px;
+}
+
+#form-name{
+    color : #333c57; font-family : "superstar"; font-size : 20px;
+}
+
+#true-button {
+    background-color : #333c57; color : white;
+    border : 0px; border-radius : 10px;
+    font-family : "superstar"; font-size : 20px;
+    padding : 3px 10px; margin : 5px auto;
+    transition : 0.25s; width : 100px;
+}
+
+#true-button:hover {
+    background-color : #45cabf; cursor : pointer;
+}
+
+#folder-icon::before{
+    content : "📁";
+}
+
+#document-icon::before{
+    content : "📄";
+}
+
+::-webkit-scrollbar{
+    width : 4px; height : 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background : #3baaa1;
+    border-radius : 50px;
+}
+
+::-webkit-scrollbar-track{
+    background : #333c57;
+}

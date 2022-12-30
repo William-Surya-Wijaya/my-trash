@@ -1,0 +1,23 @@
+@font-face{
+    font-family : "Ciutadella R";
+    src : url("Ciutadella\ Rounded.ttf") format("ttf");
+    src : url("Ciutadella_Rounded.woff") format("woff");
+}
+
+@font-face{
+    font-family : "Ciutadella R SB";
+    src : url("Ciutadella\ Rounded\ Semi\ Bold.ttf") format("ttf");
+    src : url("Ciutadella_Rounded_Semi_Bold.woff") format("woff");
+}
+
+@font-face{
+    font-family : "superstar";
+    src : url("superstar.ttf") format("ttf");
+    src : url("superstar.woff") format("woff");
+}
+
+@font-face{
+    font-family : "uha";
+    src : url("UH.ttf") format("ttf");
+    src : url("UH.woff") format("woff");
+}

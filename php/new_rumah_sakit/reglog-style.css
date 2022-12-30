@@ -1,0 +1,101 @@
+@font-face{
+    font-family : "Ciutadella R";
+    src : url("Ciutadella\ Rounded.ttf") format("ttf");
+    src : url("Ciutadella_Rounded.woff") format("woff");
+}
+
+@font-face{
+    font-family : "Ciutadella R SB";
+    src : url("Ciutadella\ Rounded\ Semi\ Bold.ttf") format("ttf");
+    src : url("Ciutadella_Rounded_Semi_Bold.woff") format("woff");
+}
+
+body {
+    background-color : white;
+}
+
+table tr td{
+    padding : 5px
+}
+
+table{
+    padding : 5px 38px 5px 0px;
+}
+
+a{
+    float : right; color : black;
+    text-decoration : none; font-family : "Ciutadella R";
+}
+
+a:hover {
+    color : blue;
+}
+
+.web-page{
+    width : 100%;
+}
+
+.card {
+    background-color : white;
+    height : content; width : 50%;
+    border : 2px solid #3baaa1; border-radius : 20px;
+    position : absolute; top : 45%; left : 50%; transform : translate(-50%,-50%);
+}
+
+.card-content {
+    padding : 20px;
+}
+
+#card-title {
+    text-align : center; letter-spacing : 1px;
+}
+
+#hospital-logo {
+    content : url("hospital-logo.png");
+    width : 88px; height : 88px; margin : auto;
+}
+
+#password-ic{
+    content : url("password-ic.png");
+    width : 20px; height : 20px;
+}
+
+#user-pp-def{
+    content : url("user-pp-def.png");
+    width : 20px; height : 20px;
+}
+
+#id-ic{
+    content : url("id-ic.png");
+    width : 20px; height : 20px;
+}
+
+#ha-er{
+    background-color : #3baaa1;
+    height : 3px; width : content; border-radius : 5px;
+    margin : 15px 15px;
+}
+
+#form-name{
+    font-family : "Ciutadella R SB";
+}
+
+#form-answer-bar{
+    font-family : "Ciutadella R"; font-size : 20px;
+    background-color : white; color :#3baaa1;
+    border : 1px solid #3baaa1; border-radius : 10px;
+    text-align : center;
+    width : 25vw;
+}
+
+#true-button {
+    background-color : #3baaa1; color : white;
+    border : 0px; border-radius : 10px;
+    font-family : "Ciutadella R"; font-size : 20px;
+    padding : 3px 50px; margin : 5px auto;
+    transition : 0.25s;
+}
+
+#true-button:hover {
+    background-color : #45cabf; cursor : pointer;
+}

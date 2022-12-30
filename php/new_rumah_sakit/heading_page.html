@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="font-fam.css">
+
+<style>
+
+    body{
+        background-color : #ebf5f4;
+    }
+
+    .web-heading{
+        height : content; width : 95%;
+    }
+
+    .web-heading > *{
+        display: "inline-block";
+    }
+
+    .content-wrapper{
+        height : content; width : content;
+    }
+
+    .float-left{
+        float : left;
+    }
+
+    .float-right{
+        float : right;
+    }
+
+    .float-middle{
+        position : absolute; top : 50%; left : 50%; transform : translate(-50%,-50%);
+    }
+
+    .vertical-center{
+        position : absolute; top : 50%; transform : translateY(-50%);
+    }
+
+    #hospital-logo{
+        content: url("hospital-logo.png");
+        width : 88px; height : 88px; margin : auto 20px;
+    }
+
+    #web-title{
+        letter-spacing: 1px;
+    }
+
+    #session{
+        color : #3baaa1; font-family : "Ciutadella R SB";
+    }
+
+</style>
+
+<html>
+    <body>
+        <div class="web-heading">
+            <div class="content-wrapper float-middle"></div>
+            <div class="float-left" id="hospital-logo"></div>
+            <div class="content-wrapper float-left">
+                <div class="content-wrapper vertical-center">
+                    <div id="web-title" style="font-family : Ciutadella R SB; font-size : 30px;">RUMAH SAKIT</div>
+                    <div id="web-title" style="font-family : Ciutadella R; font-size : 22px; ">DUDUNG PRATAMA</div>
+                </div>
+            </div>
+            <div class="content-wrapper float-right">
+                <div class="vertical-center" id="session">SESSION</div>
+            </div>
+        </div>
+    </body>
+</html>
