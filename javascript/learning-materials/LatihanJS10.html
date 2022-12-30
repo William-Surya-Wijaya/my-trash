@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <script>
+        function proses(){
+            if(document.form.kotaTujuan[0].checked)     document.form.hargaTiket.value = 100000
+            if(document.form.kotaTujuan[1].checked)     document.form.hargaTiket.value = 150000
+            if(document.form.kotaTujuan[2].checked)     document.form.hargaTiket.value = 200000
+
+            document.form.totalHarga.value = parseInt(document.form.hargaTiket.value)*parseInt(document.form.jumlahTiket.value)
+        }
+        
+    </script>
+    <body>
+        <h2>Program Penjualan Tiket</h2>
+        <form name = "form"><table>
+            <tr><td colspan = 3><hr></td></tr>
+            <tr><td>Kota Tujuan</td><td> : </td><td><input type="radio" name="kotaTujuan">Jakarta</td></tr>
+            <tr><td></td><td></td><td><input type="radio" name="kotaTujuan">Semarang</td></tr>
+            <tr><td></td><td></td><td><input type="radio" name="kotaTujuan">Surabaya</td></tr>
+            <tr><td>Jumlah Ticket</td><td> : </td><td><input type="number" name="jumlahTiket"></td></tr>
+            <tr><td colspan = 3><hr></td></tr>
+            <tr><td>Harga Ticket</td><td> : </td><td><input name="hargaTiket"></td></tr>
+            <tr><td>Total</td><td> : </td><td><input name="totalHarga"></td></tr>
+            <tr><td colspan = 3><hr></td></tr>
+        </table></form>
+        <input type="button" value="Proses" onclick="proses()"><input type="reset">
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <script>
+            var nama = "Helga", tinggi = 160, berat = 50, bmi = berat/Math.pow(tinggi/100,2), keterangan = "test"
+
+            if(bmi<18.5){
+                keterangan = "Kekurangan Berat Badan"
+            }
+            else if(bmi >=18.5 && bmi <25.0){
+                keterangan = "Normal"
+            }
+            else if(bmi >=25.0 && bmi <30.0){
+                keterangan = "Kelebihan Berat Badan"
+            }
+            else{
+                keterangan = "Obesitas"
+            }
+
+            document.write("Nama Anda : "+nama+"<br>")
+            document.write("Tinggi Badan : "+tinggi+"<br>")
+            document.write("Berat Badan : "+berat+"<br>")
+            document.write("BMI : "+bmi+"<br>")
+            document.write("keterangan : "+keterangan+"<br>")
+        </script>
+    </body>
+</html>

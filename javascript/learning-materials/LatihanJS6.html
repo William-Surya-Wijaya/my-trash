@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>       
+    </head>
+    <body>
+        <script>
+            var nama = ["Asep", "Iwan", "Cepi", "Agus", "Dadang"], tugas = [80, 75, 70, 65, 60], uts = [95, 75, 80, 40, 70], uas = [85, 90, 90, 55, 60], na = [], grade = []
+            
+            for(i = 0; i<nama.length; i++){
+                na.push(tugas[i]*40/100+uts[i]*30/100+uas[i]*30/100)
+                
+                if(na[i] >=0 && na[i] < 50){
+                    grade.push("E")
+                }
+                else if(na[i] >= 50 && na[i] < 60){
+                    grade.push("D")
+                }
+                else if(na[i] >= 60 && na[i] < 70){
+                    grade.push("C")
+                }
+                else if(na[i] >= 70 && na[i] < 80){
+                    grade.push("B")
+                }
+                else if(na[i] >= 80 && na[i] <= 100){
+                    grade.push("A")
+                }
+            }
+            
+            document.write("<table border = 1px>")
+            document.write("<tr style='background-color : grey'><td>Nomor</td><td>Nama</td><td>Tugas</td><td>UTS</td><td>UAS</td><td>Nilai Akhir</td><td>Grade</td></tr>")
+            for(i = 0; i<nama.length; i++){
+                document.write("<tr><td>"+(i+1)+"</td><td>"+nama[i]+"</td><td>"+tugas[i]+"</td><td>"+uts[i]+"</td><td>"+uas[i]+"</td><td>"+na[i]+"</td><td>"+grade[i]+"</td></tr>")
+            }document.write("</table>")
+            
+        </script>
+        </table>
+    </body>
+</html>

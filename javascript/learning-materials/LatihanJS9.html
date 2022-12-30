@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <script>
+        function proses(){
+            var jabatan = document.form.jabatan.value;
+            var pendidikan = document.form.pendidikan.value;
+            var alamat = document.form.alamat.value;
+            alert("Jabatan : "+jabatan+"\nPendidikan : "+pendidikan+"\nAlamat : "+alamat)
+
+            if(jabatan == "MANAGER"){
+                document.form.gajiPokok.value = 1000000
+            }
+            else if(jabatan == "HRD"){
+                document.form.gajiPokok.value = 8000000
+            }
+            else if(jabatan == "MARKETING"){
+                document.form.gajiPokok.value = 6000000
+            }
+
+            if(pendidikan == "SMA"){
+                document.form.tunjangan.value = parseInt(document.form.gajiPokok.value)*10/100
+            }
+            else if(pendidikan == "S1"){
+                document.form.tunjangan.value = parseInt(document.form.gajiPokok.value)*15/100
+            }
+            else if(pendidikan == "S2"){
+                document.form.tunjangan.value = parseInt(document.form.gajiPokok.value)*20/100
+            }
+            else if(pendidikan == "S3"){
+                document.form.tunjangan.value = parseInt(document.form.gajiPokok.value)*30/100
+            }
+
+            document.form.gajiTotal.value = parseInt(document.form.gajiPokok.value)+parseInt(document.form.tunjangan.value)
+        }
+    </script>
+
+    <body>
+        <h2>Membaca Object Bertipe Select dan Text Area</h2><hr>
+        <form name="form"><table>
+            <tr><td>Nama Pegawai</td><td> : </td><td><input type="text" name="nama"></input></td></tr>
+            <tr><td>Jabatan</td><td> : </td><td><select name="jabatan"><option>MANAGER</option><option>HRD</option><option>MARKETING</option></select></td></tr>
+            <tr><td>Pendidikan</td><td> : </td><td><select name="pendidikan"><option>SMA</option><option>S1</option><option>S2</option><option>S3</option></select></td></tr>
+            <tr><td>Alamat</td><td> : </td><td><textarea name="alamat"></textarea></td></tr>
+            <tr><td colspan = 3><hr></td></tr>
+            <tr><td>Gaji Pokok</td><td> : </td><td><input name="gajiPokok"></td></tr>
+            <tr><td>Tunjangan</td><td> : </td><td><input name="tunjangan"></td></tr>
+            <tr><td>Gaji Total</td><td> : </td><td><input name="gajiTotal"></td></tra>
+        </table></form><hr>
+        <input type="button" value="Proses" onclick="proses()"><input type="reset" value="Reset">
+    </body>
+</html>

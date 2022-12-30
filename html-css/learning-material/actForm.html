@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    
+    <style>
+
+        html {
+            height : 100%
+        }
+
+        body {
+            background-image : -webkit-linear-gradient(top, #7a40de, #4293eb, #42ebbe);
+            background-repeat : no-repeat; max-width : 100%; height : max-content;
+            background-attachment : fixed;
+        }
+
+        label {
+            color : #7a40de; font-family : "Century Gothic"; font-size : 16px;
+        }
+
+        input {
+            color : #000000; font-family : "Century Gothic"; font-size : 16px;
+        }
+
+        textarea {
+            color : #000000; font-family : "Century Gothic"; font-size : 16px;
+            background : #fbfbfb; border : none; outline : none; padding-top : 0px;
+            resize : none; max-height : 40px;
+        }
+
+        select {
+            width : 100%; color : #000000; font-family : "Century Gothic"; font-size : 16px;
+        }
+
+        #card {
+            background : #fbfbfb;
+            border-radius : 8px; box-shadow : 2px 6px 12px rgba(0, 0, 0, 0.35);
+            height : content; width : 356px; margin : 5% auto min(50px, 5%);
+        }
+
+        #card-content {
+            padding : 6px 44px;
+        }
+
+        #card-title {
+            font-family : "Century Gothic"; font-weight : "bold";
+            letter-spacing : 4px; padding-bottom : 0px;
+            padding-top : 0px; text-align : center;
+        }
+
+        #submit-btn {
+            background : -webkit-linear-gradient(left, #7a40de, #4293eb, #42ebbe);
+            border : none; border-radius : 21px; box-shadow : 0px 1px 8px #7a40de;
+            cursor : pointer; color : white; font-family : "Raleway SemiBold", sans-serif;
+            height : 36px; ; margin : 32px auto 32px; transition : 0.25s; width : 142px;
+            display : block;
+        }
+
+        #submit-btn:hover {
+            box-shadow : 0px 1px 8px #42ebbe;
+        }
+
+        .underline-title {
+            background : -webkit-linear-gradient(left, #7a40de, #4293eb, #42ebbe);
+            height : 3px; width :contain;
+        }
+
+        .form-content {
+            background : #fbfbfb;
+            border : none; outline : none; padding-top : 0px;
+        }
+
+        .form-border {
+            background : -webkit-linear-gradient(left, #7a40de, #4293eb, #42ebbe);
+            height : 1px; width : 100%;
+        }
+        
+        .user-photo {
+            background : -webkit-linear-gradient(left, #7a40de, #4293eb, #42ebbe);
+            opacity : 35%; border :  #42ebbe 1px solid; width : 100%; height : content;
+        } 
+
+    </style>
+
+    <head>
+        <title>ACT Form</title>
+    </head>
+    <body>
+        <div id="card">
+
+            <div id="card-content">
+                <div id="card-title">
+                    <h2 style="color : #7a40de ; font-size : 24px; font-weight : bold">BIO FORM</h2>
+                </div><div class="underline-title"></div>
+
+            <center><table>
+                <form>
+                    <tr><td style = "padding-top : 14px"></td></tr>
+                    <tr>
+                        <td><label for="user-name">Name</label></td><td>:</td><td colspan = 2><input id="user-name" class="form-content" type="text" name="username"><div class = "form-border"></div></td>
+                    </tr>
+                    <tr><td style = "padding-top : 10px"></td></tr>
+                    <tr>
+                        <td><label for="user-gender">Gender</label></td><td>:</td><td><input type=radio id="user-gender" name="user-gender" value=Male>Male</td><td><input type=radio id="user-gender" name="user-gender" value=Female>Female</td>
+                    </tr>
+                    <tr><td style = "padding-top : 10px"></td></tr>
+                    <tr>
+                        <td><label for="user-hobby">Hobby</label></td><td>:</td><td><input type=checkbox class="myCheckbox" id="video-games" value="Video Games">Games</td><td><input type=checkbox class="myCheckbox" id="music-instruments" value="Music Instruments">Music</td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td><input type=checkbox class="myCheckbox" id="singing" value="Singing">Singing</td><td><input type=checkbox class="myCheckbox" id="drawing" value="Drawing">Drawing</td>
+                    </tr>
+                    <tr><td style = "padding-top : 10px"></td></tr>
+                    <tr>
+                        <td><label for="user-religion">Religion</label></td><td>:</td><td colspan = 2><select size="1" id="user-religion"><option>Islam</option><option>Kristen</option><option>Katholik</option><option>Hindu</option><option>Buddha</option></select></td>
+                    </tr>
+                    <tr><td style = "padding-top : 10px"></td></tr>
+                    <tr>
+                        <td><label for="user-photo">Photo</label></td><td colspan="3">:</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><input type="file" class=user-photo></td>
+                    </tr>
+                    <tr><td style = "padding-top : 10px"></td></tr>
+                    <tr>
+                        <td><label for="etc">Etc</label></td><td>:</td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td colspan = 4><textarea name="etc" id="etc" cols = 29 rows = 5></textarea><div class = "form-border"></div></td>
+                    </tr>
+                    <tr>
+                        <td colspan = 4><input id="submit-btn" type="submit" name="submit" value="SUBMIT" /></td>
+                    </tr>
+                </form>
+            </table></center>
+            <div id="card-title">
+                <div class="underline-title"></div>
+                <h2 style="color : #7a40de ; font-size : 18px; font-weight : bold">황진홍의 카드</h2>
+            </div>
+            </div>
+        </div>
+
+    </body>
+</html>

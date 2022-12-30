@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>From Data</title>
+    </head>
+    <body>
+        <h2><b>FORM DATA MAHASISWA</b></h2>
+        <hr>
+        <form name="form">
+            <table>
+                <tr>
+                    <td>Nama anda</td><td>:</td><td colspan = 2><input type=text name="nama" size = 40></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td><td>:</td><td><input type=radio name="kelamin" value=Pria>pria</td><td><input type=radio name="kelamin" value=Wanita>wanita</td>
+                </tr>
+                <tr>
+                    <td>Hobby</td><td>:</td><td><input type=checkbox name="menggambar" value=Menggambar>Menggambar</td><td><input type=checkbox name="bernyanyi" value=Bernyanyi>Bernyanyi</td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td><input type=checkbox name="bermain" value=Bermain>Bermain</td><td><input type=checkbox name="membaca" value=Membaca>Membaca</td>
+                </tr>
+                <tr>
+                    <td>Agama</td><td>:</td><td><select size="1" name="agama"><option>Islam</option><option>Kristen</option><option>Buddha</option><option>Hindu</option></select>
+                </tr>
+                <tr>
+                    <td>Asal Kota</td><td>:</td><td colspan = 2><input type=text name="asalkota" size="40"></td>
+                </tr>
+                <tr>
+                    <td>Keterangan</td><td>:</td><td colspan = 2><textarea name="keterangan" cols=40 rows=5></textarea></td>
+                </tr>
+            </table>
+            <hr>
+            <input type="submit" value="Kirim"><input type = reset>
+        </form>
+    </body>
+</html>

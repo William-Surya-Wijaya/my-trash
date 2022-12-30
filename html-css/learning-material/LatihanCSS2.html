@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <script>
+        function proses(){
+
+            if (document.form.userName.value == "" && document.form.userPassword.value == ""){
+                alert("Masukan Username dan Password anda !")
+            }
+            else if (document.form.userName.value == ""){
+                alert("Masukan Username anda !")
+            }
+            else if (document.form.userPassword.value == ""){
+                alert("Masukan Password anda !")
+            }
+            else if (document.form.userName.value == "admin" && document.form.userPassword.value == "12345"){
+                alert("LOGIN BERHASIL !")
+            }
+
+        }
+    </script>
+
+    <style>
+        @font-face {
+            font-family : "Ciutadella Rounded" ;
+            src : url("Ciutadella\ Rounded.tff") format("tff");
+            src : url("Ciutadella_Rounded.woff") format("woff");
+        }
+
+        body {
+            max-width : 100%; font-family : "Ciutadella Rounded";
+        }
+
+        .card {
+            margin : 20px auto ;
+            padding : 20px 20px ;
+            height : content ; width : 300px ;
+            border : 4px solid lightslategrey ; border-radius : 25px ;
+            text-align : center ;
+        }
+
+        #form-content {
+            background : white;
+            border : 2px solid lightslategrey; border-radius : 15px ; outline : none; padding-top : 0px;
+        }
+
+        #form-border {
+            background-color : lightslategrey;
+            height : 1px; width : 100%; margin : 20px 0px;
+        }
+
+        #masuk-button {
+            background-color : white ;
+            border : 1px solid lightslategrey; border-radius : 15px ;
+            width : 100px; height : content ;
+        }
+
+    </style>
+
+    <body>
+        <div class="card">
+            <h2 style="font-size : 25px; line-height : 90%">LOGIN</h2>
+            <center><form name="form"><table style="padding : 0px 10px 20px 10px">
+                <tr><td colspan="2"><div id="form-border"></div></td></tr>
+                <tr><td style="margin-right : 20px">USERNAME</td><td><input type="text" name="userName" id="form-content"></td></tr>
+                <tr><td style="margin-right : 20px">PASSWORD</td><td><input type="password" name="userPassword" id="form-content"></td></tr>
+                <tr><td colspan="2"><div id="form-border"></div></td></tr>
+            </table></form></center>
+            <input type="button" value="MASUK" id="masuk-button" onclick="proses()">
+        </div>
+    </body>
+</html>

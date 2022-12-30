@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+    <style>
+
+        html {
+            height : 100%;
+        }
+
+        body {
+            background-image : -webkit-linear-gradient(top, #7a40de, #4293eb, #42ebbe);
+            background-repeat : no-repeat; max-width : 100%; height : auto ;border : 2px #e2ff79;
+        }
+
+        a {
+            text-decoration : none;
+        }
+
+        label {
+            font-family : "Raleway", sans-serif;
+            font-size : 11pt;
+        }
+        
+        #card {
+            background : #fbfbfb;
+            border-radius : 8px; box-shadow : 2px 6px 12px rgba(0, 0, 0, 0.35);
+            height : 100%; width : 329px; margin : 10% auto 10%;
+        }
+
+        #card-content {
+            padding : 6px 44px;
+        }
+
+        #card-title {
+            font-family : "Raleway Thin", sans-serif; font-weight : "bold";
+            letter-spacing : 4px; padding-bottom : 23px;
+            padding-top : 13px;
+            text-align : center;
+        }
+
+        #forgot-pass {
+            color : #7a40de; font-family : "Raleway", sans-serif; font-size : 10pt; text-align : right;
+            margin-top : 3px; 
+        }
+
+        #signup {
+            color : -webkit-linear-gradient(left, #7a40de, #4293eb, #42ebbe);
+            font-family : "Raleway", sans-serif; font-size : 10pt; margin-top : 16px; text-align : center;
+        }
+
+        #submit-btn {
+            background : -webkit-linear-gradient(left, #7a40de, #4293eb, #42ebbe);
+            border : none; border-radius : 21px; box-shadow : 0px 1px 8px #7a40de;
+            cursor : pointer; color : white; font-family : "Raleway SemiBold", sans-serif;
+            height : 42.3px; margin : 0 auto; margin-top : 50px; transition : 0.25s; width : 153px;
+        }
+
+        #submit-btn:hover {
+            box-shadow : 0px 1px 18px #42ebbe;
+        }
+
+        .underline-title {
+            background : -webkit-linear-gradient(left, #7a40de, #4293eb, #42ebbe);
+            height : 3px; margin : -1.1 rem auto 0 auto; width : contain;
+        }
+
+        .form {
+            align-items : left; display : flex; flex-direction : column;
+        }
+
+        .form-content {
+            background : #fbfbfb;
+            border : none; outline : none; padding-top : 0px;
+        }
+
+        .form-border {
+            background : -webkit-linear-gradient(left, #7a40de, #4293eb, #42ebbe);
+            height : 1px; width : 100%;
+        }
+
+    </style>
+
+    <head>
+        <title>
+            ACT | LOGIN
+        </title>
+    </head>
+
+    <body>
+        <div id="card">
+            <div id="card-content">
+                <div id="card-title">
+                    <h2 style = "color:#7a40de; font-size:24px; font-weight:bold">LOGIN</h2>
+                    <div class="underline-title">
+                    </div>
+                </div>
+                
+                <form method="post" class="form">
+
+                <label for="user-email" style="padding-top : 13px">&nbsp;Email</label>
+                <input id="user-email" class="form-content" type = "email" name = "email" autocomplete = "on" required />
+                <div class ="form-border"></div>
+
+                <label for="user-password" style = "padding-top : 22px">&nbsp;Password</label>
+                <input id="user-password" class="form-content" type="password" name="password" reqiured />
+                <div class="form-border"></div>
+                        
+                <a href="#"><legend id="forgot-pass">Forgot Password</legend></a>
+                
+                <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
+                <a href="#" id="signup">Don't have account yet ?</a>
+
+                </form>
+                
+            </div>
+        </div>
+    </body>
+
+</html>

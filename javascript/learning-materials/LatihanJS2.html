@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            for(i = 2; i<=100; i++){
+                con = true;
+                for(j = 2; j<i; j++){
+                    if(i%j == 0){
+                        con = false;
+                        break;
+                    }
+                }
+                if(con==true){
+                    document.write(i+" | ")
+                }
+            }
+        </script>
+    </body>
+</html>

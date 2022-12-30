@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <style>
+
+        @font-face {
+            font-family : "Feather Bold" ;
+            src : url("feather_bold.ttf") format("ttf") ;
+            src : url("feather_bold.woff") format("woff") ;
+        }
+
+        @font-face {
+            font-family : "Ciutadella Rounded" ;
+            src : url("Ciutadella\ Rounded.ttf") format("ttf") ;
+            src : url("Ciutadella_Rounded.woff") format("woff") ;
+        }
+
+        html {
+            height : 100% ;
+        }
+
+        body {
+            font-family : "Ciutadella Rounded" ;
+        }
+
+        a {
+            text-decoration : none ;
+        }
+
+        table{
+            border : 1px solid lightslategrey  ; border-radius : 15px;
+            font-size : 35px ; font-family : "Ciutadella Rounded"; 
+            box-shadow : 0px 4px 0px lightslategrey ;
+        }
+
+        tr, td {
+        padding : 5px 10px;
+        }
+        
+        table tr:first-child td{
+            background-color : #1caff6 ;
+            border-right : 0px ;
+            color : white ;
+        }
+
+        table tr:last-child td{
+            border-bottom : 0px ;
+        }
+
+        table td {
+            border-right : 1px solid lightslategrey;
+            border-bottom : 1px solid lightslategrey;
+        }
+
+        table td:last-child{
+            border-right : 0px;
+        }
+
+        .web-content {
+            margin : 30px 100px ;
+        }
+
+        .web-heading {
+            background-color : white ;
+        }
+        
+        .web-heading > * {
+            display : inline-block ;
+        }
+
+        .heading-link {
+            padding : 16px 0px ; 
+        }
+
+        .heading-link > * {
+            float : left ;
+            margin-right : auto;
+        }
+
+        div#left-arrow{
+            content : url("left-arrow.png") ;
+            height : 35px ; width : 35px ;
+            margin : auto 35px auto auto ;
+
+        }
+        #text-link {
+            height : fit-content ; width : fit-content ; font-size : 40px ;
+            margin : auto ; line-height : 90% ;
+            color :#afafaf ; font-family : "Feather Bold" ;
+        }
+        #start-lesson-button {
+            padding : 16px ;
+            border : 3px solid lightgrey; border-radius : 20px;
+            box-shadow : 0px 4px 0px lightgrey;
+            color : #1caff6 ; font-size : 30px; font-family : "Feather Bold" ;
+            background-color : white;
+            transition : 0.25s ;
+        }
+
+        #start-lesson-button:hover {
+            border : 3px solid #afafaf ;
+            box-shadow : 0px 4px 0px #afafaf ;
+            color :#1caff6  ;
+            background-color : lightgrey ;
+            cursor : pointer ;
+        }
+
+        #note-heading {
+            color : #4b4b4b ;
+            font-size : 40px ;
+            margin : 30px 0px ;
+            font-family : "Feather Bold"
+        }
+
+        #note-content {
+            color : #4b4b4b ;
+            font-size : 35px ; letter-spacing: 1px;
+            font-family : "Ciutadella Rounded"
+        }
+    </style>
+
+    <body>
+        <div class="web-content">
+            <div class="web-heading">
+                <div class="heading-link">
+                    <div id="left-arrow"></div><div id="text-link" >Basics Verbs</div>
+                </div>
+                <input type="button" id="start-lesson-button" value="START LESSON" style="float : right">
+            </div>
+            <div id="note-heading">Basics Verbs</div>
+            <div id="note-content">Now that we've learned how to say hello and introduce ourselves,
+                let's dive deeper into verbs. Let's get started !
+            </div>
+            <div id="note-heading">Verb Conjugation</div>
+            <div id="note-content">In 합쇼체, all verbs end with -ㅂ니다/-습니다 in the declarative mood.
+                (As you might have already noticed, you can get the stem by dropping -다, or -다
+                is the ending for the base form of any verb.)</div>
+            <table cellspacing="0" cellpadding="0" style="margin : 25px auto">
+                <tr><td style="border-top-left-radius:15px">Infinitive Verb</td><td>합쇼체</td><td style="border-top-right-radius:15px">Explanation</td></tr>
+                <tr><td>자다</td><td>잡니다</td><td>Verb stem ending in a vowel + -ㅂ니다</td></tr>
+                <tr><td>좋다</td><td>좋습니다</td><td>Verb stem ending in a consonant + -습니다</td></tr>
+            </table>
+        </div>
+    </body>
+</html>

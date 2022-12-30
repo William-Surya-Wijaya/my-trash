@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <script>
+        function proses(){
+            var basePrice = 0;
+            if(document.form.handphone.checked)     basePrice += 1200000*parseInt(document.form.jumlahHandphone.value)
+            if(document.form.laptop.checked)        basePrice += 5000000*parseInt(document.form.jumlahLaptop.value)
+            if(document.form.komputer.checked)      basePrice += 3000000*parseInt(document.form.jumlahKomputer.value)
+
+            document.form.totalHarga.value = parseInt(basePrice)
+        }
+    </script>
+
+    <body>
+        <h2>Program Penjualan Barang</h2><hr>
+        <table><form name="form">
+            <tr><td>Nama Barang</td><td></td><td>Jumlah Beli</td></tr>
+            <tr><td colspan = 3><hr></td></tr>
+            <tr><td><input type="checkbox" name="handphone">Handphone</td><td> : </td><td><input type="number" name="jumlahHandphone"></td></tr>
+            <tr><td><input type="checkbox" name="laptop">Laptop</td><td> : </td><td><input type="number" name="jumlahLaptop"></td></tr>
+            <tr><td><input type="checkbox" name="komputer">Komputer</td><td> : </td><td><input type="number" name="jumlahKomputer"></td></tr>
+            <tr><td colspan = 3><hr></td></tr>
+            <tr><td>Total Harga</td><td> : </td><td><input name="totalHarga"></td></tr>
+            <tr><td colspan = 3><hr></td></tr>
+        </form></table><hr>
+        <input type="button" value="Proses" onclick="proses()"><input type="reset">
+    </body>
+</html>

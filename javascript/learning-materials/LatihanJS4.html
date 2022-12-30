@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <style>
+        #red-table{
+            background-color : red;
+            padding : 50px 50px
+        }
+        #black-table{
+            background-color : black;
+            padding : 50px 50px
+        }
+    </style>
+    <body>
+        <script>
+            document.write("<table>")
+            for(i=1; i<6; i++){
+                document.write("<tr>")
+                if(i%2 == 1){
+                    clr = 0
+                }
+                else{
+                    clr = 1
+                }
+                for(j=0; j<5; j++){
+                    if(clr == 0){
+                        document.write("<td id='red-table'></td>")
+                        clr = 1
+                    }
+                    else{
+                        document.write("<td id='black-table'></td>")
+                        clr = 0
+                    }
+                }
+                document.write("</tr>")
+            }
+            document.write("</table>")
+        </script>
+    </body>
+</html>

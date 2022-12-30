@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <script>
+        function proses(){
+            document.form.gpb.value = parseInt(document.form.jamKerja.value)*parseInt(document.form.upahPJ.value)*28
+            document.form.ta.value = parseInt(document.form.anak.value)*parseInt(document.form.gpb.value)*10/100
+            document.form.gtpb.value = parseInt(document.form.gpb.value)+parseInt(document.form.ta.value)
+            document.form.pph10.value = parseInt(document.form.gtpb.value)*10/100
+            document.form.gaji.value = parseInt(document.form.gtpb.value)-parseInt(document.form.pph10.value)
+        }
+    </script>
+
+    <body>
+        <h2>Program Gaji Pegawai</h2><hr>
+        <form name="form"><table>
+            <tr><td>Nama Pegawai</td><td> : </td><td><input name="nama" type="text" value=""></td></tr>
+            <tr><td>Jam Kerja Per Hari</td><td> : </td><td><input name="jamKerja" type="number" value=""></td></tr>
+            <tr><td>Upah Per Jam</td><td> : </td><td><input name="upahPJ" type="number" value=""></td></tr>
+            <tr><td>Jumlah Anak</td><td> : </td><td><input name="anak" type="number" value=""></td></tr>
+            <tr><td colspan = 3><hr></td></tr>
+            <tr><td>Gaji Per Bulan</td><td> : </td><td><input name="gpb"></td></tr>
+            <tr><td>Tunjangan Anak</td><td> : </td><td><input name="ta"></td></tr>
+            <tr><td>Gaji Total Perbulan</td><td> : </td><td><input name="gtpb"></td></tr>
+            <tr><td>PPH 10%</td><td> : </td><td><input name="pph10"></td></tr>
+            <tr><td>Gaji Bersih Diterima</td><td> : </td><td><input name="gaji"></td></tr>
+        </table></form><hr>
+        
+        <input type="button" value="Proses" onclick="proses()"><input type="reset" value="Reset">
+    </body>
+</html>

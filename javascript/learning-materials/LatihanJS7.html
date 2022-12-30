@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <script>
+        function proses(){
+            document.form.luas.value = parseInt(document.form.panjang.value)*parseInt(document.form.lebar.value)
+        }
+    </script>
+
+    <body>
+
+        <h2>Menghitung Luas Persegi Panjang</h2><hr>
+
+        
+        <form name = form><table>
+            <tr><td>Panjang</td><td> : </td><td><input type="number" name=panjang value=""></td></tr>
+            <tr><td>Lebar</td><td> : </td><td><input type="number" name=lebar value=""></td></tr>
+            <tr><td colspan = 3><hr></td></tr>
+            <tr><td>Luas</td><td> : </td><td><input name=luas></td></tr>
+        </table></form><hr>
+
+        <input type="button" value="Proses" onclick="proses()">
+        <input type="reset" value="Reset">
+    </body>
+</html>
