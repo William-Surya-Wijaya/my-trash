@@ -1,0 +1,487 @@
+@font-face {
+  font-family: Aller;
+  src: url("../fonts/aller/aller_bd.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/aller/aller_bd.eot?#iefix") format("embedded-opentype"), url("../fonts/aller/aller_bd.woff") format("woff"), url("../fonts/aller/aller_bd.ttf") format("truetype"), url("../fonts/aller/aller_bd.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*--------------------------------------------------------------
+# Scroll Bar
+--------------------------------------------------------------*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #a5a29e; background-clip: padding-box;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 255, 255);
+}
+
+table{
+  border : 2px solid #9e9992; border-radius : 0.3em; border-collapse: separate; font-size: 1em;
+}
+
+table tr th{
+  padding : 0.5em; border-right: 2px solid #a5a29e; border-bottom: 2px solid #a5a29e;
+}
+
+table tr th:last-child{
+  border-right: 0;
+}
+
+table tr:first-child th{
+  border-top: 0;
+}
+
+table tr td{
+  padding : 0.3em; border-right: 2px solid #a5a29e; border-bottom: 1px solid #a5a29e;
+}
+
+table tr td:last-child{
+  border-right: 0;
+}
+
+table tr:last-child td{
+  border-bottom: 0;
+}
+
+table tr:last-child td:first-child{
+  border-bottom-left-radius: 0.1em;
+}
+
+table tr:last-child td:last-child{
+  border-bottom-right-radius: 0.1em;
+}
+
+table tr:nth-child(even) td{
+  background-color: #dfdad4;
+}
+
+table tr:first-child th:first-child{
+  background-color: #a5a29e; border-top-right-radius: 0.1em; border-top-left-radius: 0.1em; color: white;
+}
+
+table tr th{
+  background-color: #d7d2cc;
+}
+
+.list-title{
+  color: #4e4b3f;
+}
+
+.footer-quote{
+  background-color: white; padding: 0.3em;
+}
+
+.header-gradient, .header {
+  background: #4a90e2;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #4a90e2, #d56fa1);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #4a90e2, #d56fa1);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #4a90e2, #d56fa1);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #4a90e2, #d56fa1);
+  /* Standard syntax */ }
+
+.header {
+  padding: 40px 0;
+  margin-bottom: 40px; }
+  .header .logo {
+    margin: 40px 0; }
+  .header .title {
+    margin-top: 0;
+    font-family: Lato;
+    font-weight: lighter;
+    font-style: italic;
+    color: white; }
+  .header .subtitle {
+    font-family: Lato;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 30px; }
+  .header .store-button {
+    max-width: 45%;
+    height: auto; }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .header .logo {
+    margin-top: 80px; } }
+
+.footer-gradient, .footer {
+  background: #4a90e2;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#4a90e2, #6e7fd8);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#4a90e2, #6e7fd8);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#4a90e2, #6e7fd8);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#4a90e2, #6e7fd8);
+  /* Standard syntax */ }
+
+.footer {
+  padding: 40px 10px; }
+  .footer .footer-logo-container img {
+    margin-bottom: 30px; }
+  .footer .title {
+    color: white;
+    font-family: Lato;
+    font-style: italic;
+    font-weight: lighter; }
+  .footer .link-container .links {
+    color: white;
+    font-family: Lato;
+    font-size: 20px; }
+    .footer .link-container .links.transparent {
+      opacity: 0.6; }
+  .footer .copyright {
+    margin-top: 20px;
+    color: white;
+    font-family: Lato;
+    font-size: 15px;
+    opacity: 0.6; }
+    .footer .copyright:last-child {
+      margin-top: 0; }
+
+@media (max-width: 767px) {
+  .footer {
+    border-radius: 0; } }
+
+.section-title{
+  color: #817f7a; background: linear-gradient(66deg, rgba(223,218,212,1) 0%, rgba(223,218,212,1) 41%, rgba(223,218,212,0) 100%); padding: 0.3em; margin-top:1.5em;
+}
+
+#terms-and-conditions .terms-and-conditions-section {
+  margin: 10px 0; }
+  #terms-and-conditions .terms-and-conditions-section.grey {
+    background-color: #f8f8fb; }
+
+#about .about-section {
+  margin: 10px 0; }
+  #about .about-section.grey {
+    background-color: #f8f8fb; }
+
+#about .text-section {
+  margin-top: 30px;
+  margin-bottom: 100px; }
+
+.how-to-section {
+  margin: 10px 0;
+  padding: 20px 0; }
+  .how-to-section.grey {
+    background-color: #f8f8fb; }
+
+.text-wrapper {
+  height: 400px;
+  position: relative; }
+  .text-wrapper .section-text {
+    position: absolute;
+    top: 40%;
+    height: 100px;
+    margin-top: -50px; }
+
+.title {
+  font-family: Lato;
+  font-weight: bold;
+  color: #979797;
+  margin-bottom: 30px; }
+
+.section-header {
+  font-family: Aller;
+  font-weight: bold;
+  color: #6e7fd8; }
+
+.subtext {
+  font-family: Lato;
+  font-size: 18px;
+  color: #919191; }
+
+.how-to-image {
+  height: 400px;
+  max-width: 100%; }
+
+.hide{
+  display: none;
+}
+
+.button{
+  border : 1px solid #ece8e1;
+  border-radius : 0.3em;
+  background: white;
+  min-width: 1em;
+  height: 2em;
+  padding : 0.3em 1em 0.3em 1em;
+  margin-right : 0.3em;
+}
+
+.button:focus{
+  outline: none;
+}
+
+@media (max-width: 767px) {
+  .text-wrapper {
+    height: auto;
+    position: static; }
+    .text-wrapper .section-text {
+      position: static;
+      height: auto;
+      margin-top: 0; }
+  .how-to-image {
+    height: 200px; } }
+
+@media print{
+  @font-face {
+    font-family: Aller;
+    src: url("../fonts/aller/aller_bd.eot");
+    /* IE9 Compat Modes */
+    src: url("../fonts/aller/aller_bd.eot?#iefix") format("embedded-opentype"), url("../fonts/aller/aller_bd.woff") format("woff"), url("../fonts/aller/aller_bd.ttf") format("truetype"), url("../fonts/aller/aller_bd.svg#svgFontName") format("svg");
+    /* Legacy iOS */
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  /*--------------------------------------------------------------
+  # Scroll Bar
+  --------------------------------------------------------------*/
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: none; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: -webkit-linear-gradient(top, #4a90e2, #d56fa1); border-radius: 25px; background-clip: padding-box;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 255, 255);
+  }
+  
+  table{
+    border : 2px solid #9e9992; border-radius : 0.3em; border-collapse: separate;
+  }
+  
+  table tr th{
+    padding : 0.5em; border-right: 2px solid #a5a29e; border-bottom: 2px solid #a5a29e;
+  }
+  
+  table tr th:last-child{
+    border-right: 0;
+  }
+  
+  table tr:first-child th{
+    border-top: 0;
+  }
+  
+  table tr td{
+    padding : 0.3em; border-right: 2px solid #a5a29e; border-bottom: 1px solid #a5a29e;
+  }
+  
+  table tr td:last-child{
+    border-right: 0;
+  }
+  
+  table tr:last-child td{
+    border-bottom: 0;
+  }
+  
+  table tr:last-child td:first-child{
+    border-bottom-left-radius: 0.1em;
+  }
+  
+  table tr:last-child td:last-child{
+    border-bottom-right-radius: 0.1em;
+  }
+  
+  table tr:nth-child(even) td{
+    background-color: #dfdad4;
+  }
+  
+  table tr:first-child th:first-child{
+    background-color: #a5a29e; border-top-right-radius: 0.2em; border-top-left-radius: 0.2em; color: white;
+  }
+  
+  table tr th{
+    background-color: #d7d2cc;
+  }
+  
+  .list-title{
+    color: #4e4b3f;
+  }
+  
+  .footer-quote{
+    background-color: white; padding: 0.3em;
+  }
+  
+  .header-gradient, .header {
+    background: #4a90e2;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #4a90e2, #d56fa1);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #4a90e2, #d56fa1);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #4a90e2, #d56fa1);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #4a90e2, #d56fa1);
+    /* Standard syntax */ }
+  
+  .header {
+    padding: 40px 0;
+    margin-bottom: 40px; }
+    .header .logo {
+      margin: 40px 0; }
+    .header .title {
+      margin-top: 0;
+      font-family: Lato;
+      font-weight: lighter;
+      font-style: italic;
+      color: white; }
+    .header .subtitle {
+      font-family: Lato;
+      font-size: 20px;
+      color: white;
+      margin-bottom: 30px; }
+    .header .store-button {
+      max-width: 45%;
+      height: auto; }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .header .logo {
+      margin-top: 80px; } }
+  
+  .footer-gradient, .footer {
+    background: #4a90e2;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#4a90e2, #6e7fd8);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#4a90e2, #6e7fd8);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#4a90e2, #6e7fd8);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#4a90e2, #6e7fd8);
+    /* Standard syntax */ }
+  
+  .footer {
+    padding: 40px 10px; }
+    .footer .footer-logo-container img {
+      margin-bottom: 30px; }
+    .footer .title {
+      color: white;
+      font-family: Lato;
+      font-style: italic;
+      font-weight: lighter; }
+    .footer .link-container .links {
+      color: white;
+      font-family: Lato;
+      font-size: 20px; }
+      .footer .link-container .links.transparent {
+        opacity: 0.6; }
+    .footer .copyright {
+      margin-top: 20px;
+      color: white;
+      font-family: Lato;
+      font-size: 15px;
+      opacity: 0.6; }
+      .footer .copyright:last-child {
+        margin-top: 0; }
+  
+  @media (max-width: 767px) {
+    .footer {
+      border-radius: 0; } }
+  
+  .section-title{
+    color: #817f7a; background: linear-gradient(66deg, rgba(223,218,212,1) 0%, rgba(223,218,212,1) 41%, rgba(223,218,212,0) 100%); padding: 0.3em; margin-top:1.5em;
+  }
+  
+  #terms-and-conditions .terms-and-conditions-section {
+    margin: 10px 0; }
+    #terms-and-conditions .terms-and-conditions-section.grey {
+      background-color: #f8f8fb; }
+  
+  #about .about-section {
+    margin: 10px 0; }
+    #about .about-section.grey {
+      background-color: #f8f8fb; }
+  
+  #about .text-section {
+    margin-top: 30px;
+    margin-bottom: 100px; }
+  
+  .how-to-section {
+    margin: 10px 0;
+    padding: 20px 0; }
+    .how-to-section.grey {
+      background-color: #f8f8fb; }
+  
+  .text-wrapper {
+    height: 400px;
+    position: relative; }
+    .text-wrapper .section-text {
+      position: absolute;
+      top: 40%;
+      height: 100px;
+      margin-top: -50px; }
+  
+  .title {
+    font-family: Lato;
+    font-weight: bold;
+    color: #979797;
+    margin-bottom: 30px; }
+  
+  .section-header {
+    font-family: Aller;
+    font-weight: bold;
+    color: #6e7fd8; }
+  
+  .subtext {
+    font-family: Lato;
+    font-size: 18px;
+    color: #919191; }
+  
+  .how-to-image {
+    height: 400px;
+    max-width: 100%; }
+
+  .logo-image{
+    width: 0.3em; border-radius: 1em;
+  }
+  
+  @page{
+    size: A4;
+    margin: 3cm;
+  }
+
+  * {
+    overflow: visible;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body{
+    zoom : 0.85;
+  }
+}
