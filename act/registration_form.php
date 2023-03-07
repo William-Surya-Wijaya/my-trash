@@ -21,7 +21,7 @@
   <body style="overflow-y: hidden;">
     <div class="container" id="container">
 
-      <div class="section" id="0" style="animation: scroll-animation 2s;">
+      <div class="section" id="0">
         <div class="marginLR">
           <div class="title-text">VALORANT - Fun Match !</div>
           <div class="desc-text">By ACT Discord Admins (No Fee, Have Fun !)</div>
@@ -29,35 +29,152 @@
         </div>
       </div>
 
-      <div class="section" id="1" style="animation: scroll-animation 2s;">
+      <div class="section" id="1">
         <div class="marginLR">
-          <div class="title-text">Hi Everyone, here is the registration form for Valorant Fun Match that hosted by the ACT Discord Admin !</div>
+          <div class="title-text">Hallo semuanya, berikut adalah form pendaftaran peserta untuk Fun Match Valorant yang diadakan oleh Admin dari discord ACT!</div>
           <a onclick="fadeOutIn('#2',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
         </div>
       </div>
 
-      <div class="section" id="2" style="animation: scroll-animation 2s;">
+      <div class="section" id="2">
         <div class="marginLR">
-          <div class="title-text">The following are the terms and conditions that you can access via the link below.</div>
+          <div class="title-text">Berikut adalah peraturan dan ketentuan yang dapat kalian akses melalui link di bawah.</div>
           <div class="desc-text"><a style="text-decoration:underline; color:#b4b1a2;" onclick="javascript:window.open('https://act.marcellino.my.id')">https://act.marcellino.my.id</a></div>
           <a onclick="fadeOutIn('#3',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
         </div>
       </div>
 
-      <div class="section" id="3" style="animation: scroll-animation 2s;">
+      <div class="section" id="3">
         <div class="marginLR">
-          <div class="title-text">By filling out this form, you agree to the existing rules, conditions and requirements.</div>
+          <div class="title-text">Dengan mengisi form ini, maka pendaftar setuju dengan segala peraturan dan ketentuan yang berlaku.</div>
+          <div class="desc-text">Semua data form berikut adalah untuk keperluan pertandingan dan tidak akan disebarkan.</div>
           <a onclick="fadeOutIn('#4',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
         </div>
       </div>
 
-      <div class="section" id="4" style="animation: scroll-animation 2s;">
+      <div class="section" id="4">
         <div class="marginLR">
-          <div class="title-text">Enter your team name ! (*)</div>
-          <div class="desc-text">(Please do not contain inappropriate words)</div>
-          <input type="text" class="input-field required" id="teamName" onchange="dangerCheck(this)"/>
-          <p class="danger hidden">Please fill this in</p>
+          <div class="title-text">Masukan nama tim kamu ! (*)</div>
+          <div class="desc-text">(Tidak mengandung kata kata tidak pantas)</div>
+          <input type="text" class="input-field required" id="teamName" name="teamName" onchange="dangerCheck(this)"/>
+          <p class="danger hidden">Field ini perlu diisi !</p>
           <a onclick="fadeOutIn('#5',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
+        </div>
+      </div>
+
+      <div class="section" id="5">
+        <div class="marginLR">
+          <div class="title-text">Masukan email perwakilan tim kamu ! (*)</div>
+          <div class="desc-text">(Kebutuhan email perwakilan untuk pengumuman dan komunikasi, kami tidak akan menyebarkan email kamu)</div>
+          <input type="text" class="input-field required" id="teamEmail" name="teamEmail" onchange="dangerCheck(this)"/>
+          <p class="danger hidden">Field ini perlu diisi !</p>
+          <a onclick="fadeOutIn('#6',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
+        </div>
+      </div>
+
+      <div class="section" id="6">
+        <div class="marginLR">
+          <div class="title-text">Masukan nomor telepon perwakilan tim kamu ! (*)</div>
+          <div class="desc-text">(Kebutuhan nomor telepon perwakilan untuk pengumuman dan komunikasi)</div>
+          <input type="text" class="input-field required" id="teamPhone" name="teamPhone" onchange="dangerCheck(this)"/>
+          <p class="danger hidden">Field ini perlu diisi !</p>
+          <a onclick="fadeOutIn('#7',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
+        </div>
+      </div>
+
+      <div class="section" id="7">
+        <div class="marginLR">
+          <div class="title-text">Masukan nickname dan tag discord perwakilan tim kamu ! (*)</div>
+          <div class="desc-text">(Kebutuhan nickname discord perwakilan untuk pemanggilan tim dan koordinasi)</div>
+          <input type="text" class="input-field required" id="teamPhone" name="teamPhone" onchange="dangerCheck(this)"/>
+          <p class="danger hidden">Field ini perlu diisi !</p>
+          <a onclick="fadeOutIn('#8',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
+        </div>
+      </div>
+
+      <div class="section" id="8">
+        <div class="marginLR">
+          <div class="title-text">Masukan Nickname beserta Tag dari 5 Pemain Utama dan 1 Pemain Cadangan dari tim kamu !</div>
+          <div class="desc-text">Pemain Cadangan tidak wajib untuk diisi</div>
+          <a onclick="fadeOutIn('#9',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
+        </div>
+      </div>
+
+      <div class="section" id="9">
+        <div class="marginLR">
+          <div class="title-text">Pemain 1 ! (*)</div>
+          <div class="desc-text">(Nickname dan Tag)</div>
+          <input type="text" class="input-field required" id="teamPlayer1" name="teamPlayer1" onchange="dangerCheck(this)"/>
+          <p class="danger hidden">Field ini perlu diisi !</p>
+          <a onclick="fadeOutIn('#10',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
+        </div>
+      </div>
+
+      <div class="section" id="10">
+        <div class="marginLR">
+          <div class="title-text">Pemain 2 ! (*)</div>
+          <div class="desc-text">(Nickname dan Tag)</div>
+          <input type="text" class="input-field required" id="teamPlayer2" name="teamPlayer2" onchange="dangerCheck(this)"/>
+          <p class="danger hidden">Field ini perlu diisi !</p>
+          <a onclick="fadeOutIn('#11',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
+        </div>
+      </div>
+
+      <div class="section" id="11">
+        <div class="marginLR">
+          <div class="title-text">Pemain 3 ! (*)</div>
+          <div class="desc-text">(Nickname dan Tag)</div>
+          <input type="text" class="input-field required" id="teamPlayer3" name="teamPlayer3" onchange="dangerCheck(this)"/>
+          <p class="danger hidden">Field ini perlu diisi !</p>
+          <a onclick="fadeOutIn('#12',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
+        </div>
+      </div>
+
+      <div class="section" id="12">
+        <div class="marginLR">
+          <div class="title-text">Pemain 4 ! (*)</div>
+          <div class="desc-text">(Nickname dan Tag)</div>
+          <input type="text" class="input-field required" id="teamPlayer4" name="teamPlayer4" onchange="dangerCheck(this)"/>
+          <p class="danger hidden">Field ini perlu diisi !</p>
+          <a onclick="fadeOutIn('#13',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
+        </div>
+      </div>
+
+      <div class="section" id="13">
+        <div class="marginLR">
+          <div class="title-text">Pemain 5 ! (*)</div>
+          <div class="desc-text">(Nickname dan Tag)</div>
+          <input type="text" class="input-field required" id="teamPlayer5" name="teamPlayer5" onchange="dangerCheck(this)"/>
+          <p class="danger hidden">Field ini perlu diisi !</p>
+          <a onclick="fadeOutIn('#14',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
+        </div>
+      </div>
+
+      <div class="section" id="14">
+        <div class="marginLR">
+          <div class="title-text">Cadangan 1 !</div>
+          <div class="desc-text">(Nickname dan Tag)</div>
+          <input type="text" class="input-field" id="teamPlayer6" name="teamPlayer6" onchange="dangerCheck(this)"/>
+          <p class="danger hidden">Field ini perlu diisi !</p>
+          <a onclick="fadeOutIn('#15',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
+        </div>
+      </div>
+
+      <div class="section" id="15">
+        <div class="marginLR">
+          <div class="title-text">Masukan rank tertinggi yang ada di tim kamu ! (*)</div>
+          <div class="desc-text">(Rank tertinggi dari 5 / 6 Pemain)</div>
+          <input type="text" class="input-field required" id="teamRank" name="teamRank" onchange="dangerCheck(this)"/>
+          <p class="danger hidden">Field ini perlu diisi !</p>
+          <a onclick="fadeOutIn('#16',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
+        </div>
+      </div>
+
+      <div class="section" id="16">
+        <div class="marginLR">
+          <div class="title-text">Terima Kasih ! Kami akan memberitahukan tentang pendaftaran kamu melalui email !</div>
+          <div class="desc-text">Kami melakukan seleksi ringan untuk memastikan Fun Match berjalan dengan baik</div>
+          <a onclick="fadeOutIn('#17',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b> to Submit</span></a>
         </div>
       </div>
 
