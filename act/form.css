@@ -18,7 +18,7 @@
 }
 
 * {
-  font-family: Cambria; letter-spacing: 0.003em;
+  font-family: Cambria; letter-spacing: 0.003em; user-select: none;
 }
 
 progress {

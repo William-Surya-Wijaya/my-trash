@@ -19,7 +19,7 @@
   </head>
 
   <body style="overflow-y: hidden;">
-    <div class="container" id="container">
+    <form method="post"><div class="container" id="container">
 
       <div class="section" id="0">
         <div class="marginLR">
@@ -178,7 +178,7 @@
         </div>
       </div>
 
-    </div>
+    </form></div>
 
     <div class="footer">
       <progress class="progress-bar" id="progress" max="" value=""></progress>
