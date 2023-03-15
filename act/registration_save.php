@@ -13,12 +13,14 @@
   $teamPlayer6  = $_POST['teamPlayer6'];
   $teamRank     = $_POST['teamRank'];
 
-  $query        = "INSERT INTO `vfm_registration` (`team`, `email`, `phone`, `player1`, `player2`, `player3`, `player4`, `player5`, `player6`, `rank`) SET ($teamName, $teamEmail, $teamPhone, $teamPlayer1, $teamPlayer2, $teamPlayer3, $teamPlayer4, $teamPlayer5, $teamPlayer6, $teamRank)"
+  $query        = "INSERT INTO `vfm_registration` (`team`, `email`, `phone`, `player1`, `player2`, `player3`, `player4`, `player5`, `player6`, `rank`) SET ('$teamName', '$teamEmail', '$teamPhone', '$teamPlayer1', '$teamPlayer2, '$teamPlayer3', '$teamPlayer4', '$teamPlayer5', '$teamPlayer6', '$teamRank')";
 
-  $run          = mysqli_query($koneksi, $query);
+  var_dump($query);
+
+  // $run          = mysqli_query($koneksi, $query);
 
 ?>
 
-<script>
+<!-- <script>
   document.referrer ? window.location = document.referrer : history.back()
-</script>
+</script> -->

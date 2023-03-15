@@ -56,7 +56,6 @@ progress::-moz-progress-bar {
 ::-webkit-scrollbar-thumb:hover {
   background: #f3efe6;
 }
-
 body{
   margin: 0; padding: 0;
   background-color: #262626;
@@ -66,6 +65,9 @@ button{
 }
 a{
   text-decoration: none;
+}
+select, option{
+  color: #8f7645; background-color: #f3efe6; border: 1px solid #8f7645;
 }
 .container {
   max-width: 100%;

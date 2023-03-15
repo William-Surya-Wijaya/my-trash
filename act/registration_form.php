@@ -19,7 +19,7 @@
   </head>
 
   <body style="overflow-y: hidden;">
-    <form method="post"><div class="container" id="container">
+    <form method="post" action="registration_save.php" id="registration_form"><div class="container" id="container">
 
       <div class="section" id="0">
         <div class="marginLR">
@@ -56,7 +56,7 @@
         <div class="marginLR">
           <div class="title-text">Masukan nama tim kamu ! (*)</div>
           <div class="desc-text">(Tidak mengandung kata kata tidak pantas)</div>
-          <input type="text" class="input-field required" id="teamName" name="teamName" onchange="dangerCheck(this)"/>
+          <input type="text" class="input-field required" id="teamName" name="teamName" onchange="dangerCheck(this)" autocomplete="off"/>
           <p class="danger hidden">Field ini perlu diisi !</p>
           <a onclick="fadeOutIn('#5',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
         </div>
@@ -66,7 +66,7 @@
         <div class="marginLR">
           <div class="title-text">Masukan email perwakilan tim kamu ! (*)</div>
           <div class="desc-text">(Kebutuhan email perwakilan untuk pengumuman dan komunikasi, kami tidak akan menyebarkan email kamu)</div>
-          <input type="text" class="input-field required" id="teamEmail" name="teamEmail" onchange="dangerCheck(this)"/>
+          <input type="text" class="input-field required" id="teamEmail" name="teamEmail" onchange="dangerCheck(this)" autocomplete="off"/>
           <p class="danger hidden">Field ini perlu diisi !</p>
           <a onclick="fadeOutIn('#6',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
         </div>
@@ -76,7 +76,7 @@
         <div class="marginLR">
           <div class="title-text">Masukan nomor telepon perwakilan tim kamu ! (*)</div>
           <div class="desc-text">(Kebutuhan nomor telepon perwakilan untuk pengumuman dan komunikasi)</div>
-          <input type="text" class="input-field required" id="teamPhone" name="teamPhone" onchange="dangerCheck(this)"/>
+          <input type="text" class="input-field required" id="teamPhone" name="teamPhone" onchange="dangerCheck(this)" autocomplete="off"/>
           <p class="danger hidden">Field ini perlu diisi !</p>
           <a onclick="fadeOutIn('#7',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
         </div>
@@ -86,7 +86,7 @@
         <div class="marginLR">
           <div class="title-text">Masukan nickname dan tag discord perwakilan tim kamu ! (*)</div>
           <div class="desc-text">(Kebutuhan nickname discord perwakilan untuk pemanggilan tim dan koordinasi)</div>
-          <input type="text" class="input-field required" id="teamPhone" name="teamPhone" onchange="dangerCheck(this)"/>
+          <input type="text" class="input-field required" id="teamPhone" name="teamPhone" onchange="dangerCheck(this)" autocomplete="off"/>
           <p class="danger hidden">Field ini perlu diisi !</p>
           <a onclick="fadeOutIn('#8',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
         </div>
@@ -104,7 +104,7 @@
         <div class="marginLR">
           <div class="title-text">Pemain 1 ! (*)</div>
           <div class="desc-text">(Nickname dan Tag)</div>
-          <input type="text" class="input-field required" id="teamPlayer1" name="teamPlayer1" onchange="dangerCheck(this)"/>
+          <input type="text" class="input-field required" id="teamPlayer1" name="teamPlayer1" onchange="dangerCheck(this)" autocomplete="off"/>
           <p class="danger hidden">Field ini perlu diisi !</p>
           <a onclick="fadeOutIn('#10',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
         </div>
@@ -114,7 +114,7 @@
         <div class="marginLR">
           <div class="title-text">Pemain 2 ! (*)</div>
           <div class="desc-text">(Nickname dan Tag)</div>
-          <input type="text" class="input-field required" id="teamPlayer2" name="teamPlayer2" onchange="dangerCheck(this)"/>
+          <input type="text" class="input-field required" id="teamPlayer2" name="teamPlayer2" onchange="dangerCheck(this)" autocomplete="off"/>
           <p class="danger hidden">Field ini perlu diisi !</p>
           <a onclick="fadeOutIn('#11',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
         </div>
@@ -124,7 +124,7 @@
         <div class="marginLR">
           <div class="title-text">Pemain 3 ! (*)</div>
           <div class="desc-text">(Nickname dan Tag)</div>
-          <input type="text" class="input-field required" id="teamPlayer3" name="teamPlayer3" onchange="dangerCheck(this)"/>
+          <input type="text" class="input-field required" id="teamPlayer3" name="teamPlayer3" onchange="dangerCheck(this)" autocomplete="off"/>
           <p class="danger hidden">Field ini perlu diisi !</p>
           <a onclick="fadeOutIn('#12',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
         </div>
@@ -134,7 +134,7 @@
         <div class="marginLR">
           <div class="title-text">Pemain 4 ! (*)</div>
           <div class="desc-text">(Nickname dan Tag)</div>
-          <input type="text" class="input-field required" id="teamPlayer4" name="teamPlayer4" onchange="dangerCheck(this)"/>
+          <input type="text" class="input-field required" id="teamPlayer4" name="teamPlayer4" onchange="dangerCheck(this)" autocomplete="off"/>
           <p class="danger hidden">Field ini perlu diisi !</p>
           <a onclick="fadeOutIn('#13',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
         </div>
@@ -144,7 +144,7 @@
         <div class="marginLR">
           <div class="title-text">Pemain 5 ! (*)</div>
           <div class="desc-text">(Nickname dan Tag)</div>
-          <input type="text" class="input-field required" id="teamPlayer5" name="teamPlayer5" onchange="dangerCheck(this)"/>
+          <input type="text" class="input-field required" id="teamPlayer5" name="teamPlayer5" onchange="dangerCheck(this)" autocomplete="off"/>
           <p class="danger hidden">Field ini perlu diisi !</p>
           <a onclick="fadeOutIn('#14',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
         </div>
@@ -154,7 +154,7 @@
         <div class="marginLR">
           <div class="title-text">Cadangan 1 !</div>
           <div class="desc-text">(Nickname dan Tag)</div>
-          <input type="text" class="input-field" id="teamPlayer6" name="teamPlayer6" onchange="dangerCheck(this)"/>
+          <input type="text" class="input-field" id="teamPlayer6" name="teamPlayer6" onchange="dangerCheck(this)" autocomplete="off"/>
           <p class="danger hidden">Field ini perlu diisi !</p>
           <a onclick="fadeOutIn('#15',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
         </div>
@@ -164,7 +164,17 @@
         <div class="marginLR">
           <div class="title-text">Masukan rank tertinggi yang ada di tim kamu ! (*)</div>
           <div class="desc-text">(Rank tertinggi dari 5 / 6 Pemain)</div>
-          <input type="text" class="input-field required" id="teamRank" name="teamRank" onchange="dangerCheck(this)"/>
+          <select type="text" class="input-field required" id="teamRank" name="teamRank" onchange="dangerCheck(this)">
+            <option value="IRON">Iron</option>
+            <option value="BRONZE">Bronze</option>
+            <option value="SILVER">Silver</option>
+            <option value="GOLD">Gold</option>
+            <option value="PLATINUM">Platinum</option>
+            <option value="DIAMOND">Diamond</option>
+            <option value="ASCENDANT">Ascendant</option>
+            <option value="IMMORTAL">Immortal</option>
+            <option value="RADIANT">Radiant</option>
+          </select>
           <p class="danger hidden">Field ini perlu diisi !</p>
           <a onclick="fadeOutIn('#16',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b></span></a>
         </div>
@@ -174,7 +184,7 @@
         <div class="marginLR">
           <div class="title-text">Terima Kasih ! Kami akan memberitahukan tentang pendaftaran kamu melalui email !</div>
           <div class="desc-text">Kami melakukan seleksi ringan untuk memastikan Fun Match berjalan dengan baik</div>
-          <a onclick="fadeOutIn('#17',300)"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b> to Submit</span></a>
+          <a onclick="submitForm()"><span class="button">Continue</span><span class="button-helper">press <b>Enter</b> to Submit</span></a>
         </div>
       </div>
 
@@ -248,6 +258,10 @@
     else{
       $('div#'+(parseInt(link.substring(1))-1)+' > div.marginLR > p.danger').removeClass('hidden');
     }
+  }
+
+  function submitForm(){
+    $('#registration_form').submit();
   }
 
   $(document).ready(function(){
