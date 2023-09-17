@@ -1,0 +1,177 @@
+<link rel="stylesheet" href="calculator.css" />
+
+<html>
+  <body>
+    <div class="calculator">
+
+      <div class="row"><input class="output" id="output" readonly/></div>
+
+      <div class="row">
+        <div class="col">
+          <button class="button" id="plus">+</button>
+        </div>
+        <div class="col">
+          <button class="button" id="min">-</button>
+        </div>
+        <div class="col">
+          <button class="button" id="multiple">*</button>
+        </div>
+        <div class="col">
+          <button class="button" id="devide">/</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+
+          <div class="row">
+            <div class="col">
+              <button class="button" id="7">7</button>
+            </div>
+            <div class="col">
+              <button class="button" id="8">8</button>
+            </div>
+            <div class="col">
+              <button class="button" id="9">9</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <button class="button" id="4">4</button>
+            </div>
+            <div class="col">
+              <button class="button" id="5">5</button>
+            </div>
+            <div class="col">
+              <button class="button" id="6">6</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <button class="button" id="1">1</button>
+            </div>
+            <div class="col">
+              <button class="button" id="2">2</button>
+            </div>
+            <div class="col">
+              <button class="button" id="3">3</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <button class="button" id="0">0</button>
+            </div>
+            <div class="col">
+              <button class="button" id=".">.</button>
+            </div>
+            <div class="col">
+              <button class="button" id="ac">AC</button>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="col"><button class="is-button" id="equals">=</button></div>
+
+      </div>
+      
+
+    </div>
+  </body>
+</html>
+
+<script>
+  const output = document.getElementById("output")
+
+  const plus = document.getElementById("plus");
+  const min = document.getElementById("min");
+  const multiple = document.getElementById("multiple");
+  const devide = document.getElementById("devide");
+
+  const sembilan = document.getElementById("9");
+  const delapan = document.getElementById("8");
+  const tujuh = document.getElementById("7");
+  const enam = document.getElementById("6");
+  const lima = document.getElementById("5");
+  const empat = document.getElementById("4");
+  const tiga = document.getElementById("3");
+  const dua = document.getElementById("2");
+  const satu = document.getElementById("1");
+  const nol = document.getElementById("0");
+  const koma = document.getElementById(".");
+  const ac = document.getElementById("ac");
+
+
+  plus.addEventListener('click',function(){
+    output.value += " + ";
+  });
+
+  min.addEventListener('click',function(){
+    output.value += " - ";
+  });
+
+  multiple.addEventListener('click',function(){
+    output.value += " * ";
+  });
+
+  devide.addEventListener('click',function(){
+    output.value += " / ";
+  });
+
+
+  sembilan.addEventListener('click', function(){
+    output.value += 9;
+  });
+  
+  delapan.addEventListener('click', function(){
+    output.value += 8;
+  });
+
+  tujuh.addEventListener('click', function(){
+    output.value += 7;
+  });
+
+  enam.addEventListener('click', function(){
+    output.value += 6;
+  });
+
+  lima.addEventListener('click', function(){
+    output.value += 5;
+  });
+
+  empat.addEventListener('click', function(){
+    output.value += 4;
+  });
+
+  tiga.addEventListener('click', function(){
+    output.value += 3;
+  });
+
+  dua.addEventListener('click', function(){
+    output.value += 2;
+  });
+
+  satu.addEventListener('click', function(){
+    output.value += 1;
+  });
+
+  nol.addEventListener('click', function(){
+    output.value += 0;
+  });
+
+  koma.addEventListener('click', function(){
+    output.value += ".";
+  });
+
+  ac.addEventListener('click', function(){
+    output.value = "";
+  });
+
+  equals.addEventListener('click', function(){
+    output.value = eval(output.value);
+  });
+
+</script>

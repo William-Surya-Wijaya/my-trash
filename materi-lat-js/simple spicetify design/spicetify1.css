@@ -1,0 +1,285 @@
+@font-face {
+  font-family: PoppinsBold;
+  src: url(Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: PoppinsSemiBold;
+  src: url(Poppins-SemiBold.ttf);
+}
+
+*{
+  user-select: none;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spicetify{
+  background-color: #23283d;
+  border: 1px solid white;
+  width: 1260px;
+  height: 540px;
+  border-radius: 5px;
+}
+
+.grat-section{
+  font-family: PoppinsSemiBold;
+  color: white;
+  font-size: 23px;
+  margin-bottom: 16px;
+  margin: 20px;
+}
+
+.playlist-section{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.mfy-section{
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1em;
+  margin: 20px;
+}
+
+.mfy{
+  font-family: PoppinsSemiBold;
+  color: white;
+  font-size: 20px;
+}
+
+.mfy-card{
+  display: flex;
+  flex-direction: column;
+  background-color: #101320;
+  height: 190px;
+  width: 139px;
+  border-radius: 6px;
+}
+
+.mfy-cover{
+  background: url(japanese-girl.jpeg);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  display: flex;
+  width: 140px;
+  height: 139px;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.mfy-text{
+  background-color: #23283d9d;
+  padding: 0.5em;
+  width: 100%;
+  font-family: PoppinsSemiBold;
+  font-size: 13px;
+  color: white;
+  text-align: center;
+}
+
+.mfy-context{
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  width: 135px;
+}
+
+.mfy-title{
+  color: white;
+  font-family: PoppinsSemiBold;
+  font-size: 13px;
+}
+
+.mfy-content{
+  color: rgb(151, 151, 151);
+  font-family: PoppinsRegular;
+  font-size: 10px;
+}
+
+.row{
+  display:flex;
+  flex-direction: row;
+  column-gap: 1em;
+  scroll-snap-align: start;
+}
+
+.playlist{
+  background-color: #393e51;
+  border-radius: 8px;
+  min-width: 25em;
+  max-width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.playlist-name{
+  font-family: PoppinsSemiBold;
+  color: white;
+  font-size: 14px;
+  margin-left: 14px;
+}
+
+.playlist-cover{
+  background: url(playlist-cover.jpg);
+  width: 60px; 
+  height: 60px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.col{
+  display: flex;
+  flex-direction: column;
+}
+
+.play-section{
+  width: 100%;
+  height: 90px;
+  display: flex;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.play-background{
+  background-color: #101320;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.song-name{
+  font-family: PoppinsSemiBold;
+  color: white;
+}
+
+.song-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right:20em;
+}
+
+.artist{
+  color: rgb(151, 151, 151);
+  font-family: PoppinsRegular;
+  font-size: 10px;
+}
+
+.play-info{
+  display: flex;
+  flex-direction: row;
+  z-index: 9;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+}
+
+.song-function{
+  display: flex;
+  flex-direction: row;
+  color: rgb(214, 214, 214);
+  font-size: 14px;
+  margin-right:20em;
+  align-items: center;
+  justify-content: center;
+}
+
+.song-function > *{
+  margin: 8px;
+}
+
+.audio-function{
+  display: flex;
+  flex-direction: row;
+  color: rgb(214, 214, 214);
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-function > *{
+  margin: 8px;
+}
+
+.song-cover{
+  background: url(song-cover.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  min-height: 72px;
+  min-width: 72px;
+  animation: rotate360 12s ease-in-out infinite;
+  margin: 0 10px;
+}
+
+.vol-bar{
+  width: 85px;
+  height: 5px;
+  background-color: #818289;
+  border-radius: 20em;
+}
+
+.volume{
+  width: 40px;
+  height: 5px;
+  background-color: rgb(214, 214, 214);
+  border-radius: 20em;
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.progress{
+  background: linear-gradient(to left, rgba(30, 215, 96, 0), #1ed760);
+  height: 8px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  animation: zeroToMax 300s linear infinite;
+}
+
+@keyframes zeroToMax {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 1260px;
+  }
+}
+
+.play-button{
+
+}
+
+.progress-bar{
+  background-color: #818289;
+  width: 100%;
+  height: 8px;
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}

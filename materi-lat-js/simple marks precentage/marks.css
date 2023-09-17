@@ -1,0 +1,55 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+*{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.card{
+  border-radius: 10px;
+  padding: 25px;
+  border: 1px solid black;
+  width: 400px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.col{
+  display:flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.input{
+  border: 0;
+  background-color: transparent;
+  font-weight: bold;
+  width: 40px;
+}
+
+.box{
+  padding: 0.5em 1em;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.box:first-child, .box:last-child{
+  background-color: burlywood;
+  font-weight: bold;
+}

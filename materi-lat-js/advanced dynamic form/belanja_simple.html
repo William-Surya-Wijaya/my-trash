@@ -1,0 +1,133 @@
+<link rel="stylesheet" href="belanja_simple.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<html>
+  <body>
+    <div class="card">
+
+      <div class="card-header"></div>
+
+      <div class="card-body">
+
+        <div class="title">ASSEMBLE YOUR TEAM</div>
+
+        <div class="team-section" id="roster-container">
+
+          <div class="row content">
+            Premier is VALORANT’s team-based competitive system, and the Premier Global Open Beta launches April 25. Thanks for your interest in playing the Premier Global Open Beta!
+          </div>
+
+          <div class="row">
+            <div class="team">
+              <div class="field-name">TEAM NAME</div><input class="team-name" value="PEEl" />
+            </div>
+          </div>
+
+          <button class="add-roster" id="new-roster">Add Roster</button>
+        </div>
+
+        <div class="card-footer">
+          <button class="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const roleList = ['SENTINEL', 'DUELIST','CONTROLLER', 'INITIATOR'];
+
+  function nextRole(idx){
+    const role = document.getElementById('role'+idx);
+    const next = roleList.indexOf(role.innerHTML);
+
+    role.innerHTML = roleList[(next == roleList.length-1) ? 0 : next+1];
+  }
+
+  function prevRole(idx){
+    const role = document.getElementById('role'+idx);
+    const prev = roleList.indexOf(role.innerHTML);
+
+    role.innerHTML = roleList[(prev == 0) ? roleList.length-1 : prev-1];
+  }
+
+  function deleteRow(idx){
+    const row = document.getElementById(idx);
+    row.remove();
+
+    roster -= 1;
+    newRoster.innerHTML = 'Add Roster';
+  }
+
+  function createRoster(idx){
+    const row = document.createElement('div');
+    row.classList.add('row');
+    row.id = idx;
+
+    const roster = document.createElement('div');
+    roster.classList.add('roster');
+
+    // --- role
+    const role = document.createElement('div');
+    role.classList.add('role');
+
+      const roleName = document.createElement('div');
+      roleName.classList.add('role-name');
+      roleName.id = 'role'+idx;
+      roleName.innerHTML = 'DUELIST';
+
+      const prevButton = document.createElement('button');
+      prevButton.classList.add('button-change');
+      prevButton.setAttribute('onclick', 'prevRole('+idx+')');
+      prevButton.innerHTML = '<i class="fa fa-caret-left" aria-hidden="true"></i>';
+
+      const nextButton = document.createElement('button');
+      nextButton.classList.add('button-change');
+      nextButton.setAttribute('onclick', 'nextRole('+idx+')');
+      nextButton.innerHTML = '<i class="fa fa-caret-right" aria-hidden="true"></i>';
+
+      role.appendChild(prevButton);
+      role.appendChild(roleName);
+      role.appendChild(nextButton);
+
+    // --- username
+    const username = document.createElement('input');
+    username.classList.add('username');
+
+    // --- cnacel button
+    const cancelButton = document.createElement('button');
+    cancelButton.classList.add('button-cancel');
+    cancelButton.setAttribute('onclick', 'deleteRow('+idx+')');
+
+    cancelButton.innerHTML = '<i class="fa fa-ban" aria-hidden="true"></i>';
+
+    roster.appendChild(role);
+    roster.appendChild(username);
+    roster.appendChild(cancelButton);
+    row.appendChild(roster);
+
+    return row;
+  }
+
+  function countRosterElements() {
+    const rosterElements = document.querySelectorAll('.roster');
+    return rosterElements.length;
+  }
+
+  let roster = 1;
+  const rosterContainer = document.getElementById('roster-container');
+  const newRoster = document.getElementById('new-roster');
+
+  newRoster.addEventListener('click',function(){
+    if(countRosterElements() >= 7){
+      newRoster.innerHTML = 'MAX NUMBER OF ROSTERS REACHED';
+    }
+    else{
+      rosterContainer.appendChild(createRoster(roster));
+      roster += 1;
+    }
+    
+  });
+
+  
+</script>

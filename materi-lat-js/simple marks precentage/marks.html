@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="marks.css">
+
+<html>
+  <body>
+
+    <div class="card">
+      <div class="row">
+
+        <div class="col">
+          <div class="box">No</div>
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+          <div class="box">6</div>
+          <div class="box"></div>
+        </div>
+
+        <div class="col">
+          <div class="box">Subject</div>
+          <div class="box">Fisika</div>
+          <div class="box">Kimia</div>
+          <div class="box">Biologi</div>
+          <div class="box">Matematika</div>
+          <div class="box">Inggris</div>
+          <div class="box">Komputer</div>
+          <div class="box">Marked</div>
+        </div>
+
+        <div class="col">
+          <div class="box">Score</div>
+          <div class="box"><input class="input nilai" type="number" value="0" id="nilai1"></div>
+          <div class="box"><input class="input nilai" type="number" value="0" id="nilai2"></div>
+          <div class="box"><input class="input nilai" type="number" value="0" id="nilai3"></div>
+          <div class="box"><input class="input nilai" type="number" value="0" id="nilai4"></div>
+          <div class="box"><input class="input nilai" type="number" value="0" id="nilai5"></div>
+          <div class="box"><input class="input nilai" type="number" value="0" id="nilai6"></div>
+          <div class="box"><input class="input" type="number" value="0" id="marked" readonly></div>
+        </div>
+
+        <div class="col">
+          <div class="box">Max</div>
+          <div class="box">100</div>
+          <div class="box">100</div>
+          <div class="box">100</div>
+          <div class="box">100</div>
+          <div class="box">100</div>
+          <div class="box">100</div>
+          <div class="box">600</div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="box">Percentage : <input class="input" type="text" id="precentage" style="width: 200px;" readonly></div>
+      </div>
+    </div>
+
+  </body>
+</html>
+
+<script>
+  const marked = document.getElementById('marked');
+  const precentage = document.getElementById('precentage');
+
+  const nilais = document.querySelectorAll('.nilai');
+
+  nilais.forEach(function(nilai){
+    nilai.addEventListener('change', function(){
+      let total = 0;
+
+      nilais.forEach(function(nilai){
+        total += parseInt(nilai.value);
+      });
+
+      marked.value = total;
+      precentage.value = (parseFloat(total)/600*100)+'%';
+    });
+  });
+</script>
