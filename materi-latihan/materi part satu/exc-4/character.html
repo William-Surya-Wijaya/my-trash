@@ -1,0 +1,307 @@
+<style>
+  @font-face {
+    font-family: arone;
+    src: url(./ARONE.ttf);
+  }
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: arone ;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+  }
+  nav {
+    width: 80%;
+    margin-top: 30px;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-item{
+    display: flex;
+    column-gap: 1em;
+    font-weight: 600;
+    align-items: center;
+  }
+  .nav-link{
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    padding: 4px 12px;
+    color: black;
+    border-bottom: 2px solid transparent;
+  }
+  .nav-link.active{
+    color: white;
+    border-bottom: 2px solid white;
+  }
+  .nav-link:hover{
+    cursor: pointer;
+    border-bottom: 2px solid black;
+  }
+  .logo-nav{
+    width: 180px;
+    aspect-ratio: 64/23;
+  }
+  .user-profile {
+    border: 1px solid beige;
+    background-color: beige;
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 20em;
+  }
+  .user-name {
+    font-weight: 600;
+  }
+  .row{
+    width: fit-content;
+    display: flex;
+  }
+  .col{
+    display: flex;
+    flex-direction: column;
+  }
+  .character-gallery{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+  .character-photo-container{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+  }
+  .character-photo{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-color: rgba(0, 0, 0, 0.432);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    transition: all 3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .character-photo:hover{
+    scale: 1.2;
+  }
+  .character-card{
+    border-radius: 8px;
+    border: 2px solid white;
+  }
+  .character-name{
+    font-size: medium;
+    font-weight: 600;
+    color: black;
+    background-color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .section-list{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .section-background{
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(3px);
+    transition: all 0.35s ease-in-out;
+    overflow: hidden;
+  }
+  .section-content{
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile-icon{
+    font-size: 40px;
+  }
+  .pre-loader{
+    position: fixed;
+    z-index: 99;
+    background-color: rgb(0, 0, 0);
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-in-out;
+  }
+  .loader{
+    height:100px;
+    width:100px;
+    border-radius:50%;
+    border:5px solid #ddd;
+    border-top-color:#333;
+    animation:rotate 1s infinite;
+  }
+  .loader-text{
+    color: white;
+    font-size: 20px;
+  }
+  .pre-loader.hide{
+    opacity: 0;
+  }
+  @keyframes rotate{
+    100%{
+      rotate:360deg;
+    }
+  }
+</style>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <nav>
+      <img class="logo-nav" src="./gi-logo.png"/>
+      <div class="nav-item">
+        <a class="nav-link" href="dashboard.html">HOME</a>
+        <a class="nav-link active" href="character.html">CHARACTER</a>
+        <a class="nav-link" href="weapon.html">WEAPON</a>
+        <a class="nav-link" href="artifact.html">ARTIFACT</a>
+        <a class="nav-link" href="spyral.html">SPYRAL ABYSS</a>
+      </div>
+      <div class="nav-item"> 
+        <div class="user-name">Log In</div>
+        <i class="fa fa-user-circle profile-icon" aria-hidden="true"></i>
+      </div>
+    </nav>
+    <div class="section-list">
+      <div class="section">
+        <div class="section-content">
+          <div class="character-gallery">
+            <div class="character-card" id="amber-detail">
+              <div class="character-photo-container">
+                <img class="character-photo" src="./gallery/amber.png">
+              </div>
+              <div class="character-name">Amber</div>
+            </div>
+            <div class="character-card">
+              <div class="character-photo-container">
+                <img class="character-photo" src="./gallery/jean.png">
+              </div>
+              <div class="character-name">Jean</div>
+            </div>
+            <div class="character-card">
+              <div class="character-photo-container">
+                <img class="character-photo" src="./gallery/kaeya.png">
+              </div>
+              <div class="character-name">Kaeya</div>
+            </div>
+            <div class="character-card">
+              <div class="character-photo-container">
+                <img class="character-photo" src="./gallery/lisa.png">
+              </div>
+              <div class="character-name">Lisa</div>
+            </div>
+            <div class="character-card">
+              <div class="character-photo-container">
+                <img class="character-photo" src="./gallery/diluc.png">
+              </div>
+              <div class="character-name">Diluc</div>
+            </div>
+            <div class="character-card">
+              <div class="character-photo-container">
+                <img class="character-photo" src="./gallery/barbara.png">
+              </div>
+              <div class="character-name">Barbara</div>
+            </div>
+            <div class="character-card">
+              <div class="character-photo-container">
+                <img class="character-photo" src="./gallery/razor.png">
+              </div>
+              <div class="character-name">Razor</div>
+            </div>
+            <div class="character-card">
+              <div class="character-photo-container">
+                <img class="character-photo" src="./gallery/venti.png">
+              </div>
+              <div class="character-name">Venti</div>
+            </div>
+          </div>
+        </div>
+        <img class="section-background" id="mondstadt" src="./gallery/mondstadt.jpg" />
+      </div>
+    </div>
+    <div class="pre-loader">
+      <div class="loader"></div>
+      <div class="loader-text">Loading . . .</div>
+    </div>
+  </body>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(()=>{
+      document.querySelector('.pre-loader').classList.add('hide');
+      setTimeout(()=>{
+        document.querySelector('.pre-loader').style.display="none";
+      }, 500);
+    }, 500);
+  });
+  const mondstadtBG = document.getElementById('mondstadt');
+
+  let mondstadtIndex = 0;
+
+  function changeImage(element, currentIndex, imageSources) {
+    element.style.transition = "all 0.35s linear";
+    element.style.opacity = 0;
+    element.style.transform = "scale(1)";
+    setTimeout(function () {
+        element.src = imageSources[currentIndex];
+        element.style.opacity = 1;
+        element.style.transform = "scale(1.1)";
+        element.style.transition = "opacity 0.35s linear, transform 6s linear";
+    }, 350); 
+    mondstadtIndex = (currentIndex + 1) % imageSources.length;
+  }
+
+
+  let mondstadtImages = [
+    "./gallery/mondstadt2.jpg",
+    "./gallery/mondstadt.jpg",
+  ];
+
+  setInterval(function() {
+    changeImage(mondstadtBG, mondstadtIndex, mondstadtImages);
+  }, 6000);
+
+
+  //AMBER DETAIL
+  const amberDetail = document.getElementById('amber-detail');
+  amberDetail.addEventListener('click', ()=>{
+    location.href="./character-detail/amber.html";
+  });
+</script>
