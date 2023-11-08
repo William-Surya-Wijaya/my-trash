@@ -1,7 +1,7 @@
 <style>
   @font-face {
     font-family: arone;
-    src: url(./ARONE.ttf);
+    src: url(../ARONE.ttf);
   }
   * {
     padding: 0;
@@ -14,11 +14,19 @@
     align-items: center;
     background-color: black;
   }
-  nav {
-    width: 80%;
-    margin-top: 30px;
+  nav{
+    width: 100vw;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.432);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    z-index: 1;
+    z-index: 9;
+  }
+  .nav {
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -34,12 +42,13 @@
     text-decoration: none;
     transition: all .3s ease-in-out;
     padding: 4px 12px;
-    color: black;
+    color: white;
     border-bottom: 2px solid transparent;
   }
   .nav-link.active{
     color: white;
     border-bottom: 2px solid white;
+    text-shadow: 0 0 8px white;
   }
   .nav-link:hover{
     cursor: pointer;
@@ -48,63 +57,29 @@
   .logo-nav{
     width: 180px;
     aspect-ratio: 64/23;
+    filter: invert(1)
   }
   .user-profile {
-    border: 1px solid beige;
-    background-color: beige;
     width: 50px;
     aspect-ratio: 1/1;
     border-radius: 20em;
+    color: white;
   }
   .user-name {
     font-weight: 600;
+    color: white;
   }
-  .row{
-    width: fit-content;
-    display: flex;
-  }
-  .col{
+  .character-detail{
+    height: 100vh !important;
+    aspect-ratio: 4/3;
+    transition: all 0.35s ease-in-out;
+    overflow: hidden;
+    position: absolute;
+    align-self: flex-end;
+    left: 15vw;
+    z-index: 4;
     display: flex;
     flex-direction: column;
-  }
-  .character-gallery{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-  }
-  .character-photo-container{
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    overflow: hidden;
-  }
-  .character-photo{
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    background-color: rgba(0, 0, 0, 0.432);
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
-    transition: all 3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  .character-photo:hover{
-    scale: 1.2;
-  }
-  .character-card{
-    border-radius: 8px;
-    border: 2px solid white;
-  }
-  .character-name{
-    font-size: medium;
-    font-weight: 600;
-    color: black;
-    background-color: white;
-    padding: 10px 0;
-    display: flex;
     justify-content: center;
   }
   .section-list{
@@ -131,9 +106,21 @@
     transition: all 0.35s ease-in-out;
     overflow: hidden;
   }
+  .character-image{
+    height: 100vh !important;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: bottom;
+    transition: all 0.35s ease-in-out;
+    overflow: hidden;
+    position: absolute;
+    align-self: flex-end;
+    right: 7.5%;
+    z-index: 2;
+  }
   .section-content{
-    position: fixed;
-    z-index: 1;
+    position: relative;
+    z-index: 4;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -141,39 +128,179 @@
   }
   .profile-icon{
     font-size: 40px;
+    color: white;
   }
-  .pre-loader{
-    position: fixed;
-    z-index: 99;
-    background-color: rgb(0, 0, 0);
-    opacity: 1;
-    width: 100%;
-    height: 100%;
+  .cd-name{
+    font-size: 84px;
+    font-weight: 600;
+    color: white;
+    font-family: arone;
+  }
+  .cd-devider{
+    width: 15%;
+    border-top: 4px solid #cca574;
+  }
+  .cd-va{
     display: flex;
-    gap: 15px;
+    margin-top: 20px;
+  }
+  .cd-va-name{
+    width: fit-content;
+    background-color: #cca574;
+    padding: 0.5em 2em;
+    font-size: 22px;
+  }
+  .cd-va-icon{
+    background-color: #af9368;
+    width: 40px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border : 3px solid #927549;
+  }
+  .cd-va-icon > * {
+    font-size: 24px;
+  }
+  .cd-va-lang{
+    margin-left: 20px;
+    color: white;
+    font-size: 24px;
+  }
+  .cd-intro-container {
+    margin-top: 15px;
+    width: 625px;
+    height: 120px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.473);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .cd-intro {
+    font-size: 18px;
+    color: white;
+    padding: 0 5px 0 0;
+    width: 575px;
+    height: 100px;
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+  .cd-intro::-webkit-scrollbar {
+    width: 6px;
+  }
+  .cd-intro::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.377);
+    border-radius: 6px;
+    margin: 10px;
+  }
+  .cd-intro::-webkit-scrollbar-track {
+    background-color: transparent;
+    width: 8px;
+  }
+  .cd-intro-icon{
+    font-size: 24px;
+    align-self: flex-start;
+    margin: 10px 10px 0 10px;
+    color: white;
+  }
+  .cd-relations{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+  }
+  .cd-relations-title{
+    color: white;
+    font-weight: 600;
+  }
+  .cd-relations-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+  }
+  .cd-relations-char{
+    width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    border-style: 10px;
+    background-color: rgba(0, 0, 0, 0.473);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.377);
+  }
+  .logo-footer{
+    width: 150px;
+    aspect-ratio: 64/23;
+  }
+  footer{
+    width: 100%;
+    padding: 0.5em 0;
+    font-weight: 600;
+    gap: 10px;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: all .5s ease-in-out;
+    filter: invert(1);
   }
   .loader{
-    height:100px;
-    width:100px;
-    border-radius:50%;
-    border:5px solid #ddd;
-    border-top-color:#333;
-    animation:rotate 1s infinite;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 98;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all .5s ease-in-out;
   }
-  .loader-text{
-    color: white;
-    font-size: 20px;
+  .pre-loader {
+    height: 100vh;
+    aspect-ratio: 4/3;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 100;
+    right: 7.5%;
   }
-  .pre-loader.hide{
+  .loader-running {
+    height: 100vh;
+    object-fit: cover;
+    z-index: 100;
+    overflow-x: hidden;
+    animation: loaderAnimation 3s ease-out infinite;
+  }
+  .loader.show .loader-running{
+    animation: loaderFinal 0.5s ease-out;
+  }
+  .loader.show{
     opacity: 0;
   }
-  @keyframes rotate{
-    100%{
-      rotate:360deg;
+
+  @keyframes loaderAnimation {
+    0% {
+      width: 50px;
+    }
+    30% {
+      width: 300px;
+    }
+    70%{
+      width: 350px;
+    }
+    100% {
+      width: 50px;
+    }
+  }
+
+  @keyframes loaderFinal {
+    0% {
+      width: 50px;
+    }
+    100% {
+      width: 100vh;
+      aspect-ratio: 4/3;
+      opacity: 0;
     }
   }
 </style>
@@ -185,79 +312,66 @@
   </head>
   <body>
     <nav>
-      <img class="logo-nav" src="./gi-logo.png"/>
-      <div class="nav-item">
-        <a class="nav-link" href="dashboard.html">HOME</a>
-        <a class="nav-link active" href="character.html">CHARACTER</a>
-        <a class="nav-link" href="weapon.html">WEAPON</a>
-        <a class="nav-link" href="artifact.html">ARTIFACT</a>
-        <a class="nav-link" href="spyral.html">SPYRAL ABYSS</a>
-      </div>
-      <div class="nav-item"> 
-        <div class="user-name">Log In</div>
-        <i class="fa fa-user-circle profile-icon" aria-hidden="true"></i>
+      <div class="nav">
+        <img class="logo-nav" src="../gi-logo.png"/>
+        <div class="nav-item">
+          <a class="nav-link" href="../dashboard.html">HOME</a>
+          <a class="nav-link active" href="../character.html">CHARACTER</a>
+          <a class="nav-link" href="../weapon.html">WEAPON</a>
+          <a class="nav-link" href="../artifact.html">ARTIFACT</a>
+          <a class="nav-link" href="../spyral.html">SPYRAL ABYSS</a>
+        </div>
+        <div class="nav-item"> 
+          <div class="user-name">Log In</div>
+          <i class="fa fa-user-circle profile-icon" aria-hidden="true"></i>
+        </div>
       </div>
     </nav>
     <div class="section-list">
       <div class="section">
         <div class="section-content">
-          <div class="character-gallery">
-            <div class="character-card" id="amber-detail">
-              <div class="character-photo-container">
-                <img class="character-photo" src="./gallery/amber.png">
+          <div class="character-detail">
+            <div class="cd-devider"></div>
+            <div class="cd-name">AMBER</div>
+            <div class="cd-va">
+              <div class="cd-va-name">VA: IWAMI Manaka</div>
+              <div class="cd-va-icon">
+                <i class="fa fa-microphone" aria-hidden="true"></i>
               </div>
-              <div class="character-name">Amber</div>
+              <div class="cd-va-lang">JP</div>
             </div>
-            <div class="character-card">
-              <div class="character-photo-container">
-                <img class="character-photo" src="./gallery/jean.png">
+            <div class="cd-intro-container">
+              <diV class="cd-intro-icon">
+                <i class="fa fa-caret-right" aria-hidden="true"></i>
+              </diV>
+              <div class="cd-intro">
+                <p>A perky, straightforward girl, who is also the only Outrider of the Knights of Favonius.</p>
+                <p>Her amazing mastery of the glider has made her a three-time winner of the Gliding Champion in Mondstadt.</p>
+                <p>As a rising star within the Knights of Favonius, Amber is always ready for any challenging tasks.</p>
               </div>
-              <div class="character-name">Jean</div>
             </div>
-            <div class="character-card">
-              <div class="character-photo-container">
-                <img class="character-photo" src="./gallery/kaeya.png">
+            <div class="cd-relations">
+              <div class="cd-relations-title">RELATIONSHIP</div>
+              <div class="cd-relations-list">
+                <img class="cd-relations-char" src="../gallery/kaeya.png" />
+                <img class="cd-relations-char" src="../gallery/diluc.png" />
+                <img class="cd-relations-char" src="../gallery/venti.png" />
               </div>
-              <div class="character-name">Kaeya</div>
-            </div>
-            <div class="character-card">
-              <div class="character-photo-container">
-                <img class="character-photo" src="./gallery/lisa.png">
-              </div>
-              <div class="character-name">Lisa</div>
-            </div>
-            <div class="character-card">
-              <div class="character-photo-container">
-                <img class="character-photo" src="./gallery/diluc.png">
-              </div>
-              <div class="character-name">Diluc</div>
-            </div>
-            <div class="character-card">
-              <div class="character-photo-container">
-                <img class="character-photo" src="./gallery/barbara.png">
-              </div>
-              <div class="character-name">Barbara</div>
-            </div>
-            <div class="character-card">
-              <div class="character-photo-container">
-                <img class="character-photo" src="./gallery/razor.png">
-              </div>
-              <div class="character-name">Razor</div>
-            </div>
-            <div class="character-card">
-              <div class="character-photo-container">
-                <img class="character-photo" src="./gallery/venti.png">
-              </div>
-              <div class="character-name">Venti</div>
             </div>
           </div>
         </div>
-        <img class="section-background" id="mondstadt" src="./gallery/mondstadt.jpg" />
+        <img class="character-image" src="../gallery/amber.png" />
+        <img class="section-background" id="mondstadt" src="../gallery/mondstadt.jpg" />
       </div>
     </div>
-    <div class="pre-loader">
-      <div class="loader"></div>
-      <div class="loader-text">Loading . . .</div>
+    <footer>
+      <img class="logo-footer" src="../gi-logo.png"/>
+      <div>Copyright © COGNOSPHERE. All Rights Reserved.</div>
+    </footer>
+    <div class="loader">
+      <div class="pre-loader">
+        <img class="loader-running" src="../gallery/amber-loader.svg" />
+      </div>
     </div>
   </body>
 </html>
@@ -265,9 +379,9 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     setTimeout(()=>{
-      document.querySelector('.pre-loader').classList.add('hide');
+      document.querySelector('.loader').classList.add('show');
       setTimeout(()=>{
-        document.querySelector('.pre-loader').style.display="none";
+        document.querySelector('.loader').style.display="none";
       }, 500);
     }, 500);
   });
@@ -283,25 +397,18 @@
         element.src = imageSources[currentIndex];
         element.style.opacity = 1;
         element.style.transform = "scale(1.1)";
-        element.style.transition = "opacity 0.35s linear, transform 6s linear";
+        element.style.transition = "opacity 0.35s linear, transform 8s linear";
     }, 350); 
     mondstadtIndex = (currentIndex + 1) % imageSources.length;
   }
 
 
   let mondstadtImages = [
-    "./gallery/mondstadt2.jpg",
-    "./gallery/mondstadt.jpg",
+    "../gallery/mondstadt2.jpg",
+    "../gallery/mondstadt.jpg",
   ];
 
   setInterval(function() {
     changeImage(mondstadtBG, mondstadtIndex, mondstadtImages);
-  }, 6000);
-
-
-  //AMBER DETAIL
-  const amberDetail = document.getElementById('amber-detail');
-  amberDetail.addEventListener('click', ()=>{
-    location.href="./character-detail/amber.html";
-  });
+  }, 8000);
 </script>
