@@ -1,0 +1,498 @@
+<style>
+  @font-face {
+    font-family: arone;
+    src: url(./ARONE.ttf);
+  }
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: arone ;
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    gap: 50px;
+    height: 100%;
+  }
+  nav{
+    width: 100vw;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.432);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9;
+  }
+  .nav {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-item{
+    display: flex;
+    column-gap: 1em;
+    font-weight: 600;
+    align-items: center;
+  }
+  .nav-link{
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    padding: 4px 12px;
+    color: white;
+    border-bottom: 2px solid transparent;
+  }
+  .nav-link.active{
+    color: white;
+    border-bottom: 2px solid white;
+    text-shadow: 0 0 8px white;
+  }
+  .nav-link:hover{
+    cursor: pointer;
+    border-bottom: 2px solid black;
+  }
+  .logo-nav{
+    width: 180px;
+    aspect-ratio: 64/23;
+    filter: invert(1)
+  }
+  .user-profile {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 20em;
+    color: white;
+  }
+  .user-name {
+    font-weight: 600;
+    color: white;
+  }
+  .logo-footer{
+    width: 150px;
+    aspect-ratio: 64/23;
+  }
+  .section-list{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .section-background{
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(3px);
+    transition: all 0.35s ease-in-out;
+    overflow: hidden;
+  }
+  .profile-icon{
+    font-size: 40px;
+    color: white;
+  }
+  footer{
+    width: 100%;
+    padding: 0.5em 0;
+    font-weight: 600;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: invert(1);
+  }
+  .pre-loader{
+    position: fixed;
+    z-index: 99;
+    background-color: rgb(0, 0, 0);
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-in-out;
+  }
+  .loader{
+    height:100px;
+    width:100px;
+    border-radius:50%;
+    border:5px solid #ddd;
+    border-top-color:#333;
+    animation:rotate 1s infinite;
+  }
+  .loader-text{
+    color: white;
+    font-size: 20px;
+  }
+  .pre-loader.hide{
+    opacity: 0;
+  }
+  @keyframes rotate{
+    100%{
+      rotate:360deg;
+    }
+  }
+  *{
+    color: white;
+  }
+
+  .login-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    gap: 20px;
+  }
+  .login-title{
+    font-size: 20px;
+  }
+  .login-section form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 2em 4em;
+    border-radius: 20px;
+  }
+  .form-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-group label{
+    font-size: 20px;
+  }
+  .form-group input{
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.473);
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 8px;
+    width: 200px;
+  }
+  .form-button button{
+    border: 1px solid rgba(255, 255, 255, 0.473);
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 16px;
+    padding: 8px 15px;
+    transition: 0.5s ease-in-out;
+  }
+  .form-button button:hover{
+    border: 1px solid rgba(255, 255, 255, 1);
+  }
+  .swal2-popup {
+    border: 1px solid rgba(255, 255, 255, 0.473);
+    background-color: black;
+    color: white;
+  }
+  .calendar-box {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  .calendar-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .calendar {
+    background-color: black;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 1;
+    display: none;
+    border: 1px solid #ccc;
+    transform: translate(-13%, 20px);
+  }
+  .header {
+    background-color: transparent;
+    color: black !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  #prevBtn,
+  #nextBtn {
+    background: none;
+    border: none;
+    color: black !important;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  #monthYear {
+    font-size: 18px;
+  }
+  
+  .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+  }
+  .day {
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    width: 20px;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+  }
+  .day.current {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #ccc;
+  }
+  .day.selected {
+    background-color: #ffffff;
+    color: black;
+  }
+  #dateInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="body">
+      <div class="login-section">
+        <div class="login-title">REGISTER YOUR ACCOUNT</div>
+        <form method="post" name="login-form">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input id="fullname" name="fullname" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label>Birth Date</label>
+            <input type="text" id="birthdate-display" name="birthdate-display" autocomplete="off" readonly />
+            <input type="hidden" id="birthdate" name="birthdate" autocomplete="off" readonly />
+            <div class="calendar" id="calendar">
+              <div class="header">
+                <div id="prevBtn"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+                <h2 id="monthYear">Month Year</h2>
+                <div id="nextBtn"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+              </div>
+              <div class="days" id="daysContainer"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Username</label>
+            <input id="username" name="username" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="password" name="password" autocomplete="off" />
+          </div>
+          <div class="form-button">
+            <button id="login-submit">REGISTER</button>
+          </div>
+        </div>
+        </form>
+      <footer>
+        <img class="logo-footer" src="./gi-logo.png"/>
+        <div>Copyright © COGNOSPHERE. All Rights Reserved.</div>
+      </footer>
+      <div class="pre-loader">
+        <div class="loader"></div>
+        <div class="loader-text">Loading . . .</div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const usernameInput   = document.getElementById('username');
+  const passwordInput   = document.getElementById('password');
+  const birthdateInput  = document.getElementById('birthdate');
+  const fullnameInput   = document.getElementById('fullname');
+  const submitButton    = document.getElementById('login-submit');
+
+  submitButton.addEventListener('click', (event)=>{
+    event.preventDefault()
+    if(fullnameInput.value == ""){
+      Swal.fire({
+        icon: "error",
+        title: "Please fill your full name !",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else if(birthdateInput.value == ""){
+      Swal.fire({
+        icon: "error",
+        title: "Please fill your birth date !",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else if(usernameInput.value == ""){
+      Swal.fire({
+        icon: "error",
+        title: "Please fill your username !",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else if(passwordInput.value == ""){
+      Swal.fire({
+        icon: "error",
+        title: "Please fill your password !",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else {
+      Swal.fire({
+        icon: "success",
+        title: "Register Success !",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  });
+
+  function formatDate(date) {
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(()=>{
+      document.querySelector('.pre-loader').classList.add('hide');
+      setTimeout(()=>{
+        document.querySelector('.pre-loader').style.display="none";
+      }, 500);
+    }, 500);
+
+    const daysContainer = document.getElementById("daysContainer");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const monthYear = document.getElementById("monthYear");
+    const dateInput = document.getElementById("birthdate-display");
+    const dateValue = document.getElementById("birthdate");
+    const calendar = document.getElementById("calendar");
+
+    let currentDate = new Date();
+    let selectedDate = null;
+
+    function handleDayClick(day) {
+      selectedDate = new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        day
+      );
+
+      dateInput.value = formatDate(selectedDate);
+      dateValue.value = currentDate.getFullYear()+'-'+currentDate.getMonth()+'-'+day;
+      calendar.style.display = "none";
+      renderCalendar();
+    }
+
+    function createDayElement(day) {
+      const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+      const dayElement = document.createElement("div");
+      dayElement.classList.add("day");
+
+      if (date.toDateString() === new Date().toDateString()) {
+        dayElement.classList.add("current");
+      }
+      if (selectedDate && date.toDateString() === selectedDate.toDateString()) {
+        dayElement.classList.add("selected");
+      }
+
+      dayElement.textContent = day;
+      dayElement.addEventListener("click", () => {
+        handleDayClick(day);
+      });
+      daysContainer.appendChild(dayElement);
+    }
+
+    function renderCalendar() {
+      daysContainer.innerHTML = "";
+      const firstDay = new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        1
+      );
+      const lastDay = new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth() + 1,
+        0
+      );
+
+      monthYear.textContent = `${currentDate.toLocaleString("default", {
+        month: "long"
+      })} ${currentDate.getFullYear()}`;
+
+      for (let day = 1; day <= lastDay.getDate(); day++) {
+        createDayElement(day);
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      renderCalendar();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      renderCalendar();
+    });
+
+    dateInput.addEventListener("click", () => {
+      calendar.style.display = "block";
+      positionCalendar();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!dateInput.contains(event.target) && !calendar.contains(event.target)) {
+        calendar.style.display = "none";
+      }
+    });
+
+    function positionCalendar() {
+      const inputRect = dateInput.getBoundingClientRect();
+      calendar.style.top = inputRect.bottom + "px";
+      calendar.style.left = inputRect.left + "px";
+    }
+
+    window.addEventListener("resize", positionCalendar);
+
+    renderCalendar();
+  });
+</script>
