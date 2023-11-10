@@ -1,0 +1,392 @@
+<style>
+  @font-face {
+    font-family: arone;
+    src: url(../ARONE.ttf);
+  }
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: arone ;
+  }
+  .body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: black;
+    gap: 50px;
+    height: 100%;
+    min-height: 100%;
+    padding: 2em 0;
+  }
+  nav{
+    width: 100vw;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.432);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9;
+  }
+  .nav {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-item{
+    display: flex;
+    column-gap: 1em;
+    font-weight: 600;
+    align-items: center;
+  }
+  .nav-link{
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    padding: 4px 12px;
+    color: white;
+    border-bottom: 2px solid transparent;
+  }
+  .nav-link.active{
+    color: white;
+    border-bottom: 2px solid white;
+    text-shadow: 0 0 8px white;
+  }
+  .nav-link:hover{
+    cursor: pointer;
+    border-bottom: 2px solid black;
+  }
+  .logo-nav{
+    width: 180px;
+    aspect-ratio: 64/23;
+    filter: invert(1)
+  }
+  .user-profile {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 20em;
+    color: white;
+  }
+  .user-name {
+    font-weight: 600;
+    color: white;
+  }
+  .logo-footer{
+    width: 150px;
+    aspect-ratio: 64/23;
+  }
+  .section-list{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .section-background{
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(3px);
+    transition: all 0.35s ease-in-out;
+    overflow: hidden;
+  }
+  .profile-icon{
+    font-size: 40px;
+    color: white;
+  }
+  footer{
+    width: 100%;
+    padding: 0.5em 0;
+    font-weight: 600;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: invert(1);
+  }
+  .pre-loader{
+    position: fixed;
+    z-index: 99;
+    background-color: rgb(0, 0, 0);
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-in-out;
+  }
+  .loader{
+    height:100px;
+    width:100px;
+    border-radius:50%;
+    border:5px solid #ddd;
+    border-top-color:#333;
+    animation:rotate 1s infinite;
+  }
+  .loader-text{
+    color: white;
+    font-size: 20px;
+  }
+  .pre-loader.hide{
+    opacity: 0;
+  }
+  @keyframes rotate{
+    100%{
+      rotate:360deg;
+    }
+  }
+  *{
+    color: white;
+  }
+
+  .login-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    gap: 20px;
+  }
+  .login-title{
+    font-size: 20px;
+  }
+  .form-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 2em 4em;
+    border-radius: 20px;
+  }
+  .form-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-group label{
+    font-size: 20px;
+  }
+  .form-group input, .form-group select{
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.473);
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 8px;
+    width: 200px;
+  }
+  .form-button{
+    margin: 10px 0;
+  }
+  .form-button button{
+    border: 1px solid rgba(255, 255, 255, 0.473);
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 16px;
+    padding: 8px 15px;
+    transition: 0.5s ease-in-out;
+    width: 200px !important;
+    display: flex;
+    justify-content: space-around;
+  }
+  .form-button button:hover{
+    border: 1px solid rgba(255, 255, 255, 1);
+  }
+  select option{
+    color: black !important;
+  }
+  .swal2-popup {
+    border: 1px solid rgba(255, 255, 255, 0.473);
+    background-color: black;
+    color: white;
+  }
+  .character-list{
+    min-height: 100%;
+  }
+  table{
+    width: 40vw;
+  }
+  .character-header{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+  }
+  table th{
+    padding: 0.5em 1em;
+    font-weight: bold;
+  }
+  table td{
+    padding: 0.5em 1em;
+  }
+  .input-card{
+    height: auto;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.377);
+    border-radius: 6px;
+    margin: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+    width: 8px;
+    background-color: black;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<html>
+  <body>
+    <div class="body">
+      <div class="character-list">
+        <div class="character-header">Character List</div>
+        <table class="character-table" border="1" cellpadding="0" cellspacing="0">
+          <thead>
+            <tr>
+              <th width="5%">No</th>
+              <th width="25%">Region</th>
+              <th width="50%">Name</th>
+              <th width="20%">Element</th>
+            </tr>
+          </thead>
+          <tbody id="table-tbody">
+          </tbody>
+        </table>
+      </div>
+      <div class="input-card">
+        <div class="card-header">
+          <div class="card-title"></div>
+          <div class="card-desc"></div>
+        </div>
+        <form class="form-section" name="character-input" type="post">
+          <div class="form-group">
+            <label>Region</label>
+            <select id="region-name" name="region-name">
+              <option selected hidden value="">- pick region -</option>
+              <option>Mondstadt</option>
+              <option>Liyue</option>
+              <option>Inazuma</option>
+              <option>Sumeru</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Character Name</label>
+            <input id="character-name" name="character-name" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label>Character Element</label>
+            <select id="character-element" name="character-element">
+              <option selected hidden value="">- pick element -</option>
+              <option>Pyro</option>
+              <option>Anemo</option>
+              <option>Geo</option>
+              <option>Electro</option>
+              <option>Dendro</option>
+              <option>Hydro</option>
+            </select>
+          </div>
+          <div class="form-button">
+            <button id="submit-submit"><i class="fa fa-plus-circle" aria-hidden="true"></i>ADD CHARACTER</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const tableBody = document.getElementById('table-tbody');
+
+  let tableIndex = 1;
+
+  function addCharacter(idx, region, name, element){
+    const newRow = document.createElement('tr');
+
+    const noCol  = document.createElement('td');
+    noCol.innerHTML = idx;
+
+    const regionCol  = document.createElement('td');
+    regionCol.innerHTML = region.value;
+
+    const nameCol    = document.createElement('td');
+    nameCol.innerHTML = name.value;
+
+    const elementCol = document.createElement('td');
+    elementCol.innerHTML = element.value;
+
+    newRow.appendChild(noCol);
+    newRow.appendChild(regionCol);
+    newRow.appendChild(nameCol);
+    newRow.appendChild(elementCol);
+
+    tableBody.appendChild(newRow);
+  }
+
+  function resetInput(){
+    regionName.value = "";
+    characterName.value = "";
+    characterElement.value = "";
+  };
+
+  const regionName        = document.getElementById('region-name');
+  const characterName     = document.getElementById('character-name');
+  const characterElement  = document.getElementById('character-element');
+
+  const submitButton    = document.getElementById('submit-submit');
+
+  submitButton.addEventListener('click', (event)=>{
+    event.preventDefault()
+    if(regionName.value == ""){
+      Swal.fire({
+        icon: "error",
+        title: "Please pick the Character Region !",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else if(characterName.value == ""){
+      Swal.fire({
+        icon: "error",
+        title: "Please pick the Character Name !",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else if(characterElement.value == ""){
+      Swal.fire({
+        icon: "error",
+        title: "Please pick the Character Element !",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else {
+      addCharacter(tableIndex++ ,regionName, characterName, characterElement);
+      resetInput();
+      Swal.fire({
+        icon: "success",
+        title: "Success adding new character !",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  });
+
+</script>

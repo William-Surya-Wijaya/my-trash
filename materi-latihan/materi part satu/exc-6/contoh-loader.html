@@ -1,0 +1,43 @@
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .pre-loader {
+    height: 100vh;
+    aspect-ratio: 4/3;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 99;
+    right: 7.5%;
+  }
+
+  .loader-running {
+    height: 100%;
+    object-fit: cover;
+    z-index: 100;
+    overflow-x: hidden;
+    animation: loaderAnimation 3s ease-out infinite;
+  }
+
+  @keyframes loaderAnimation {
+    0% {
+      width: 50px;
+    }
+    30% {
+      width: 300px;
+    }
+    70%{
+      width: 350px;
+    }
+    100% {
+      width: 50px;
+    }
+  }
+</style>
+
+<div class="pre-loader">
+  <img class="loader-running" src="./gallery/amber-loader.svg" />
+</div>
