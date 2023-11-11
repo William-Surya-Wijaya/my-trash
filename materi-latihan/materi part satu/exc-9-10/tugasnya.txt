@@ -1,0 +1,10 @@
+Tugas 9 :
+
+Bikin yang sama kaya register buat login page
+
+
+Tugas 10 :
+
+Bikin yang sama kaya register buat character form
+Jadi bikin 1 file lagi (copy) tapi, tanpa table
+Dan tambah character bukan masuk ke table, tapi mirip kaya yang register (direct page lain)
