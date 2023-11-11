@@ -1,0 +1,100 @@
+<style>
+  @font-face {
+    font-family: arone;
+    src: url(./ARONE.ttf);
+  }
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: arone ;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body > * {
+    width: 80%;
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-item{
+    display: flex;
+    column-gap: 1em;
+    font-weight: 600;
+    align-items: center;
+  }
+  .nav-link{
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    padding: 4px 12px;
+    color: black;
+    border-bottom: 2px solid black;
+  }
+  .nav-link.active{
+    background-color: rgb(207, 179, 142);
+    color: white;
+  }
+  .nav-link:hover{
+    background-color: rgb(219, 195, 163);
+    color: white;
+    cursor: pointer;
+    border-bottom: 2px solid black;
+  }
+  .logo-nav{
+    width: 15%;
+    aspect-ratio: 64/23;
+  }
+  .user-profile {
+    border: 1px solid beige;
+    background-color: beige;
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 20em;
+  }
+  .user-name {
+    font-weight: 600;
+  }
+  .row{
+    width: fit-content;
+    display: flex;
+  }
+  .col{
+    display: flex;
+    flex-direction: column;
+  }
+  .section-list{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: center;
+  }
+</style>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <nav>
+      <img class="logo-nav" src="./gi-logo.png"/>
+      <div class="nav-item">
+        <a class="nav-link active" href="dashboard.html">HOME</a>
+        <a class="nav-link" href="character.html">CHARACTER</a>
+        <a class="nav-link" href="weapon.html">WEAPON</a>
+        <a class="nav-link" href="artifact.html">ARTIFACT</a>
+        <a class="nav-link" href="spyral.html">SPYRAL ABYSS</a>
+      </div>
+      <div class="nav-item"> 
+        <img class="user-profile" src="./profile.jpg" />
+        <div class="user-name">BRIAN</div>
+      </div>
+    </nav>
+    <div class="section">Character</div>
+  </body>
+</html>

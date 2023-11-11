@@ -1,0 +1,414 @@
+<style>
+  @font-face {
+    font-family: arone;
+    src: url(../ARONE.ttf);
+  }
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: arone ;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+  }
+  nav{
+    width: 100vw;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.432);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9;
+  }
+  .nav {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-item{
+    display: flex;
+    column-gap: 1em;
+    font-weight: 600;
+    align-items: center;
+  }
+  .nav-link{
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    padding: 4px 12px;
+    color: white;
+    border-bottom: 2px solid transparent;
+  }
+  .nav-link.active{
+    color: white;
+    border-bottom: 2px solid white;
+    text-shadow: 0 0 8px white;
+  }
+  .nav-link:hover{
+    cursor: pointer;
+    border-bottom: 2px solid black;
+  }
+  .logo-nav{
+    width: 180px;
+    aspect-ratio: 64/23;
+    filter: invert(1)
+  }
+  .user-profile {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 20em;
+    color: white;
+  }
+  .user-name {
+    font-weight: 600;
+    color: white;
+  }
+  .character-detail{
+    height: 100vh !important;
+    aspect-ratio: 4/3;
+    transition: all 0.35s ease-in-out;
+    overflow: hidden;
+    position: absolute;
+    align-self: flex-end;
+    left: 15vw;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .section-list{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .section-background{
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(3px);
+    transition: all 0.35s ease-in-out;
+    overflow: hidden;
+  }
+  .character-image{
+    height: 100vh !important;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: bottom;
+    transition: all 0.35s ease-in-out;
+    overflow: hidden;
+    position: absolute;
+    align-self: flex-end;
+    right: 7.5%;
+    z-index: 2;
+  }
+  .section-content{
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile-icon{
+    font-size: 40px;
+    color: white;
+  }
+  .cd-name{
+    font-size: 84px;
+    font-weight: 600;
+    color: white;
+    font-family: arone;
+  }
+  .cd-devider{
+    width: 15%;
+    border-top: 4px solid #cca574;
+  }
+  .cd-va{
+    display: flex;
+    margin-top: 20px;
+  }
+  .cd-va-name{
+    width: fit-content;
+    background-color: #cca574;
+    padding: 0.5em 2em;
+    font-size: 22px;
+  }
+  .cd-va-icon{
+    background-color: #af9368;
+    width: 40px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border : 3px solid #927549;
+  }
+  .cd-va-icon > * {
+    font-size: 24px;
+  }
+  .cd-va-lang{
+    margin-left: 20px;
+    color: white;
+    font-size: 24px;
+  }
+  .cd-intro-container {
+    margin-top: 15px;
+    width: 625px;
+    height: 120px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.473);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .cd-intro {
+    font-size: 18px;
+    color: white;
+    padding: 0 5px 0 0;
+    width: 575px;
+    height: 100px;
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+  .cd-intro::-webkit-scrollbar {
+    width: 6px;
+  }
+  .cd-intro::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.377);
+    border-radius: 6px;
+    margin: 10px;
+  }
+  .cd-intro::-webkit-scrollbar-track {
+    background-color: transparent;
+    width: 8px;
+  }
+  .cd-intro-icon{
+    font-size: 24px;
+    align-self: flex-start;
+    margin: 10px 10px 0 10px;
+    color: white;
+  }
+  .cd-relations{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+  }
+  .cd-relations-title{
+    color: white;
+    font-weight: 600;
+  }
+  .cd-relations-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+  }
+  .cd-relations-char{
+    width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    border-style: 10px;
+    background-color: rgba(0, 0, 0, 0.473);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.377);
+  }
+  .logo-footer{
+    width: 150px;
+    aspect-ratio: 64/23;
+  }
+  footer{
+    width: 100%;
+    padding: 0.5em 0;
+    font-weight: 600;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: invert(1);
+  }
+  .loader{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 98;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all .5s ease-in-out;
+  }
+  .pre-loader {
+    height: 100vh;
+    aspect-ratio: 4/3;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 100;
+    right: 7.5%;
+  }
+  .loader-running {
+    height: 100vh;
+    object-fit: cover;
+    z-index: 100;
+    overflow-x: hidden;
+    animation: loaderAnimation 3s ease-out infinite;
+  }
+  .loader.show .loader-running{
+    animation: loaderFinal 0.5s ease-out;
+  }
+  .loader.show{
+    opacity: 0;
+  }
+
+  @keyframes loaderAnimation {
+    0% {
+      width: 50px;
+    }
+    30% {
+      width: 300px;
+    }
+    70%{
+      width: 350px;
+    }
+    100% {
+      width: 50px;
+    }
+  }
+
+  @keyframes loaderFinal {
+    0% {
+      width: 50px;
+    }
+    100% {
+      width: 100vh;
+      aspect-ratio: 4/3;
+      opacity: 0;
+    }
+  }
+</style>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav">
+        <img class="logo-nav" src="../gi-logo.png"/>
+        <div class="nav-item">
+          <a class="nav-link" href="../dashboard.html">HOME</a>
+          <a class="nav-link active" href="../character.html">CHARACTER</a>
+          <a class="nav-link" href="../weapon.html">WEAPON</a>
+          <a class="nav-link" href="../artifact.html">ARTIFACT</a>
+          <a class="nav-link" href="../spyral.html">SPYRAL ABYSS</a>
+        </div>
+        <div class="nav-item"> 
+          <div class="user-name">Log In</div>
+          <i class="fa fa-user-circle profile-icon" aria-hidden="true"></i>
+        </div>
+      </div>
+    </nav>
+    <div class="section-list">
+      <div class="section">
+        <div class="section-content">
+          <div class="character-detail">
+            <div class="cd-devider"></div>
+            <div class="cd-name">AMBER</div>
+            <div class="cd-va">
+              <div class="cd-va-name">VA: IWAMI Manaka</div>
+              <div class="cd-va-icon">
+                <i class="fa fa-microphone" aria-hidden="true"></i>
+              </div>
+              <div class="cd-va-lang">JP</div>
+            </div>
+            <div class="cd-intro-container">
+              <diV class="cd-intro-icon">
+                <i class="fa fa-caret-right" aria-hidden="true"></i>
+              </diV>
+              <div class="cd-intro">
+                <p>A perky, straightforward girl, who is also the only Outrider of the Knights of Favonius.</p>
+                <p>Her amazing mastery of the glider has made her a three-time winner of the Gliding Champion in Mondstadt.</p>
+                <p>As a rising star within the Knights of Favonius, Amber is always ready for any challenging tasks.</p>
+              </div>
+            </div>
+            <div class="cd-relations">
+              <div class="cd-relations-title">RELATIONSHIP</div>
+              <div class="cd-relations-list">
+                <img class="cd-relations-char" src="../gallery/kaeya.png" />
+                <img class="cd-relations-char" src="../gallery/diluc.png" />
+                <img class="cd-relations-char" src="../gallery/venti.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img class="character-image" src="../gallery/amber.png" />
+        <img class="section-background" id="mondstadt" src="../gallery/mondstadt.jpg" />
+      </div>
+    </div>
+    <footer>
+      <img class="logo-footer" src="../gi-logo.png"/>
+      <div>Copyright © COGNOSPHERE. All Rights Reserved.</div>
+    </footer>
+    <div class="loader">
+      <div class="pre-loader">
+        <img class="loader-running" src="../gallery/amber-loader.svg" />
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(()=>{
+      document.querySelector('.loader').classList.add('show');
+      setTimeout(()=>{
+        document.querySelector('.loader').style.display="none";
+      }, 500);
+    }, 500);
+  });
+  const mondstadtBG = document.getElementById('mondstadt');
+
+  let mondstadtIndex = 0;
+
+  function changeImage(element, currentIndex, imageSources) {
+    element.style.transition = "all 0.35s linear";
+    element.style.opacity = 0;
+    element.style.transform = "scale(1)";
+    setTimeout(function () {
+        element.src = imageSources[currentIndex];
+        element.style.opacity = 1;
+        element.style.transform = "scale(1.1)";
+        element.style.transition = "opacity 0.35s linear, transform 8s linear";
+    }, 350); 
+    mondstadtIndex = (currentIndex + 1) % imageSources.length;
+  }
+
+
+  let mondstadtImages = [
+    "../gallery/mondstadt2.jpg",
+    "../gallery/mondstadt.jpg",
+  ];
+
+  setInterval(function() {
+    changeImage(mondstadtBG, mondstadtIndex, mondstadtImages);
+  }, 8000);
+</script>
