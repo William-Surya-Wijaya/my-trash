@@ -1,0 +1,18 @@
+BUAT QUERY SESUAI PERINTAH dan TULISKAN QUERY TERSEBUT UNTUK MENAMPILKAN APA
+QUERY YANG DIBUAT TIDAK BOLEH YANG SUDAH PERNAH DIBUAT DI SOAL
+
+BUAT 2 QUERY yang harus menggunakan WHERE LIKE !
+
+BUAT 2 QUERY yang harus menggunakan LEFT JOIN dan WHERE!
+
+BUAT 2 QUERY yang harus menggunakan LEFT JOIN, WHERE dan LIMIT!
+
+BUAT 2 QUERY yang harus menggunakan AVG, LEFT JOIN, WHERE dan GROUP BY !
+
+BUAT 3 QUERY yang harus menggunakan SUBQUERY, LEFT JOIN dan WHERE !
+
+BUAT 2 QUERY yang harus menggunakan (COUNT / AVG / SUM), SUBQUERY, WHERE dan GROUP BY !
+
+BUAT 3 QUERY yang harus menggunakan (COUNT / AVG / SUM), SUBQUERY, WHERE dan ORDER BY !
+
+BUAT 2 QUERY yang harus menggunakan NESTED QUERY dan SUBQUERY !
