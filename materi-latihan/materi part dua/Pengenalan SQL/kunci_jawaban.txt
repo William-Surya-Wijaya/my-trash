@@ -1,0 +1,58 @@
+--SQL 1
+
+CREATE TABLE penduduk (
+	id_penduduk INT PRIMARY KEY AUTO_INCREMENT,
+	id_kota INT NOT NULL,
+	nama_penduduk VARCHAR(100) NOT NULL,
+	penghasilan INT NOT NULL,
+	tanggal_lahir DATE NOT NULL
+);
+
+CREATE TABLE kendaraan (
+	id_kendaraan INT PRIMARY KEY AUTO_INCREMENT,
+	id_pemilik INT NOT NULL,
+	kendaraan VARCHAR(255) NOT NULL,
+	jenis_kendaraan VARCHAR(80) NOT NULL
+);
+
+CREATE TABLE teman (
+	id_penduduk_a INT NOT NULL,
+	id_penduduk_b INT NOT NULL
+);
+
+CREATE TABLE kota (
+	id_kota INT PRIMARY KEY AUTO_INCREMENT,
+	id_provinsi INT NOT NULL,
+	nama_kota VARCHAR(80) NOT NULL
+);
+
+CREATE TABLE provinsi (
+	id_provinsi INT PRIMARY KEY AUTO_INCREMENT,
+	nama_provinsi VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE umr (
+	id_umr INT PRIMARY KEY AUTO_INCREMENT,
+	id_kota INT NOT NULL,
+	nilai_umr INT NOT NULL
+);
+
+CREATE TABLE buku (
+	id_buku INT PRIMARY KEY AUTO_INCREMENT,
+	nama_buku VARCHAR(255) NOT NULL,
+	harga_buku INT NOT NULL
+);
+
+CREATE TABLE buku_penulis (
+	id_buku INT NOT NULL,
+	id_penulis INT NOT NULL
+);
+
+CREATE TABLE penjualan_buku (
+	id_penjualan INT PRIMARY KEY AUTO_INCREMENT,
+	id_buku INT NOT NULL,
+	id_pembeli INT NOT NULL,
+	jumlah_buku INT NOT NULL,
+	tanggal_penjualan DATE NOT NULL
+);
+
