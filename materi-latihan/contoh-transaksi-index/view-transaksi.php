@@ -27,7 +27,8 @@
 
         .penjelasan {
             max-width: 50%;
-            overflow: scroll;
+            overflow-y: scroll;
+            overflow-x: hidden;
         }
 
         .penjelasan > *{
