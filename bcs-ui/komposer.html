@@ -535,6 +535,8 @@
 
     .komposer-container{
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
         gap: 25px;
         margin-top: 20px;
@@ -544,10 +546,8 @@
         width: 500px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        border: 1px solid #d2d2d2;
-        border-bottom: 4px solid #d2d2d2;
+        justify-content: center;
+        align-items: center;
         border-radius: 10px;
         transition: 0.25s ease-in-out;
         overflow: hidden;
@@ -558,6 +558,7 @@
         width: 500px;
         object-fit: cover;
         object-position: center;
+        border-radius: 10px;
         align-self: center;
     }
 
@@ -570,7 +571,7 @@
     }
 
     .komposer-region{
-        padding: 0 0 25px 20px;
+        padding: 0 0 25px 0;
         color: grey;
         font-size: 18px;
     }
@@ -583,13 +584,13 @@
         padding: 20px;
         border-radius: 1000px;
         z-index: 3;
-        transform: translate(550%, 270px);
+        transform: translate(250%, 100px);
         transition: 0.3s ease-in-out;
         opacity: 0;
     }
 
     .komposer-card:hover .komposer-go-to{
-        transform: translate(550%, 250px);
+        transform: translate(250%, 90px);
         opacity: 1;
     }
 

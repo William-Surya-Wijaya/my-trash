@@ -1,0 +1,842 @@
+/* ----- SCROLL BAR STYLES ----- */
+::-webkit-scrollbar-track {
+    background: #000000;
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e2e2e2;
+    border: 2px solid #e2e2e2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+
+/* ----- GENERAL STYLES ----- */
+*{
+    padding: 0;
+    margin: 0;
+}
+
+*{
+    font-family: "Open Sans", sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.upper-nav-bar{
+    width: calc(100vw - 160px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: black;
+    color: #d4d4d4;
+    position: fixed;
+    z-index: 5;
+}
+
+.upper-nav-logo{
+    width: 80px;
+    object-fit: contain;
+}
+
+.upper-nav-search{
+    width: 500px;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 32px;
+    font-size: 20px;
+    background-color: #e2e2e2;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 3px;
+}
+
+.upper-nav-search .icon{
+    color: rgb(106, 106, 106);
+    margin-right: 6px;
+}
+
+.upper-nav-search input{
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    font-size: 16px;
+}
+
+.upper-nav-search input:focus{
+    outline: none;
+}
+
+.upper-nav-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 28%;
+    font-size: 16px;
+    margin: auto 9%;
+}
+
+.upper-nav-link{
+    transition: 0.5s ease-in-out;
+    text-decoration: none;
+}
+
+.btn{
+    padding: 0 16px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    border: 0;
+    font-size: 16px;
+    border: 1px solid transparent;
+    transition: 0.25s ease-in-out;
+}
+
+.upper-nav-link:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.upper-nav-link.active{
+    font-weight: bold;
+    color: white;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn:hover.border-muted-black{
+    border: 1px solid #e2e2e2;
+}
+
+.btn:hover.btn-black{
+    color: white;
+}
+
+.btn-white{
+    background-color: #e2e2e2;
+    color: black;
+}
+
+.btn-black{
+    background-color: black;
+    color: #e2e2e2;
+}
+
+.border-muted-black{
+    border: 1px solid #afafaf;
+}
+
+.button-merge{
+    display: flex;
+}
+
+.button-merge .btn:first-child{
+    border-radius: 4px 0 0 4px;
+    border-right: 0;
+}
+
+.button-merge .btn{
+    border-radius: 0;
+}
+
+.button-merge .btn:last-child{
+    border-radius: 0 4px 4px 0;
+    border-left: 0;
+}
+
+.resp-page-section:first-of-type{
+    width: 100vw;
+    height: 100vh;
+}
+
+.resp-page-section:last-of-type{
+    margin-bottom: 80px;
+}
+
+.resp-page-section{
+    margin-top: 20px;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-carousel{
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.section-row.left-flex{
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.resp-page-section.left-flex{
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.resp-page-section.left-flex.no-first{
+    width: 90vw;
+    margin-top: 100px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: max-content;
+}
+
+.resp-page-section.left-flex#kategori{
+    margin-top: 80px;
+    margin-bottom: 50px;
+    width: calc(100vw - 580px);
+    filter: invert(1);
+    background-color: white;
+    padding: 50px 290px 80px 290px;
+}
+
+.section-title{
+    margin-top: 32px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #0b0b0b;
+    margin-bottom: 10px;
+}
+
+.section-sub{
+    width: 600px;
+    font-size: 16px;
+    color: grey;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.tall-card{
+    aspect-ratio: 3/5;
+    width: 350px;
+    border: 1px solid #d2d2d2;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+.tall-card > img{
+    aspect-ratio: 3/3.7;
+    width: 350px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-title{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0b0b0b;
+    margin-bottom: 8px;
+}
+
+.card-sub{
+    height: 100px;
+    font-size: 16px;
+    color: grey;
+}
+
+.card-more{
+    font-size: 16px;
+    color:white;
+    background-color: #0b0b0b;
+    justify-self: flex-end;
+    padding: 4px 0;
+}
+
+.label-container{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.label-link{
+    border-radius: 4px;
+    border: 1px solid #0b0b0b;
+    color: #0b0b0b;
+    font-size: 18px;
+    padding: 6px 12px;
+    font-weight: bold;
+    border-bottom: 3px solid #0b0b0b;
+    transition: 0.25s ease-in-out;
+}
+
+.label-link:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border-bottom: 3px solid #0b0b0b;
+}
+
+.koleksi-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.koleksi-link{
+    width: 242px;
+    aspect-ratio: 3/4;
+    border-radius: 8px;
+    border: 1px solid #d2d2d2;
+    overflow: hidden;
+}
+
+.koleksi-link img{
+    width: 242px;
+    aspect-ratio: 1/1;
+}
+
+.tab-koleksi-link{
+    width: 260px;
+    aspect-ratio: 3.2/4.2;
+    border-radius: 8px;
+    border: 1px solid #d2d2d2;
+    overflow: hidden;
+}
+
+.tab-koleksi-link img{
+    width: 260px;
+    aspect-ratio: 1/1;
+}
+
+.koleksi-title{
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 18px;
+}
+
+.tab-koleksi-sub{
+    font-size: 18px;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    color: grey;
+}
+
+.tab-koleksi-title{
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 10px 0px 10px;
+}
+
+.footer{
+    margin-top: 80px;
+    width: calc(100vw - 160px);
+    color: #d2d2d2;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    font-size: 16px;
+    padding: 20px 80px;
+}
+
+.footer-logo{
+    width: 300px;
+}
+
+.footer-row{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-col.min-gap > .footer-row{
+    margin-top: 10px;
+    justify-content: center;
+    gap: 30px;
+    margin-right: 30px;
+}
+
+.footer-desc{
+    width: 500px;
+    margin-right: 50px;
+}
+
+.footer-col{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.footer-kategori{
+    margin-top: 10px;
+}
+
+.footer-link{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-link > .fa-brands{
+    font-size: 26px;
+}
+
+.little-dot{
+    font-size: 6px;
+}
+
+.footer-link:hover{
+    cursor: pointer;
+    color: white;
+}
+
+hr{
+    margin: 20px 0;
+    width: 100%;
+}
+
+.footer-cr{
+    color: #d2d2d2;
+}
+
+.filter-list{
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 5px;
+    margin-left: 10px;
+    display: none;
+}
+
+.filter-list.active{
+    display: flex;
+}
+
+.filter-title{
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.filter-group{
+    font-size: 18px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.filter-name{
+    width: 100px;
+}
+
+.filter-icon{
+    font-size: 16px;
+}
+
+.filter-group:not(:first-child){
+    margin-top: 10px;
+}
+
+.filter-group:hover{
+    cursor: pointer;
+}
+
+.section-row.flex-start{
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.min-col{
+    width: 15%;
+}
+
+.max-col{
+    width: 85%;
+}
+
+.trigger-container{
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+}
+
+.tab-trigger{
+    font-size: 20px;
+    transition: 0.25s ease-in-out;
+}
+
+.tab-trigger.active{
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.tab-trigger:hover{
+    border-bottom: 1px solid black;
+}
+
+.tab-container{
+    display: none;
+}
+
+.tab-container.active{
+    display: block;
+}
+
+.komposer-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.komposer-card{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid #d2d2d2;
+    border-bottom: 4px solid #d2d2d2;
+    border-radius: 10px;
+    transition: 0.25s ease-in-out;
+    overflow: hidden;
+}
+
+.komposer-card > img{
+    aspect-ratio: 16/9;
+    width: 500px;
+    object-fit: cover;
+    object-position: center;
+    align-self: center;
+}
+
+.komposer-name{
+    margin-top: 15px;
+    padding: 0 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.komposer-region{
+    padding: 0 0 25px 20px;
+    color: grey;
+    font-size: 18px;
+}
+
+.section-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.komposer-go-to{
+    position: absolute;
+    background-color: black;
+    color: #e2e2e2;
+    font-size: 32px;
+    padding: 20px;
+    border-radius: 1000px;
+    z-index: 3;
+    transform: translate(550%, 270px);
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.komposer-card:hover .komposer-go-to{
+    transform: translate(550%, 250px);
+    opacity: 1;
+}
+
+.komposer-card:hover{
+    background-color: #efefef;
+}
+
+.komposer-detail{
+    font-size: 18px;
+    margin-top: 150px !important;
+}
+
+.komposer-detail .section-row > img{
+    border-radius: 1000px;
+    aspect-ratio: 1/1;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    margin: 20px 0;
+}
+
+.komposer-detail .komposer-name{
+    font-size: 42px;
+}
+
+.komposer-detail .komposer-region{
+    font-size: 24px;
+}
+
+.komposer-story{
+    color: grey;
+    margin-left: 20px;
+}
+
+.komposer-medsos{
+    display: flex;
+    margin-left: 20px;
+    gap: 10px;
+    margin-top: 25px;
+    font-size: 24px;
+}
+
+.link{
+    color: grey;
+    transition: 0.25s ease-in-out;
+}
+
+.link:hover{
+    color: black;
+}
+
+.koleksi-detail{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 200px !important;
+}
+
+.koleksi-detail > .section-row > img{
+    margin-bottom: 40px;
+    width : 80vw;
+    height: 400px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+    filter:blur(3px);
+}
+
+.koleksi-detail > .section-row:first-child > .koleksi-content{
+    margin-bottom: 40px;
+    position: absolute;
+    z-index: 3;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: calc(80vw - 120px);
+    height: calc(400px - 80px);
+    border-radius: 10px;
+    padding: 40px 40px 40px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.koleksi-detail > .section-row > .koleksi-content > .koleksi-name{
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+.koleksi-detail > .section-row > .koleksi-content > .koleksi-desc{
+    font-size: 18px;
+    width: 70%;
+    opacity: 0.7;
+}
+
+.koleksi-name{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.koleksi-detail .koleksi-container{
+    width: 80vw;
+}
+
+.koleksi-detail .koleksi-container .tab-koleksi-link{
+    width: 282px;
+}
+
+.koleksi-detail .koleksi-container .tab-koleksi-link img{
+    width: 282px;
+}
+
+.filter-group{
+    display: flex;
+    gap: 20px;
+    color: grey;
+}
+
+.filter-icon{
+    font-size: 20px;
+    transition: 0.25s ease-in-out;
+}
+
+.filter-icon:hover{
+    color: black;
+}
+
+.koleksi{
+    margin-top: 110px !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.koleksi-container,.komposer-container{
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+
+/* ----- CAROUSEL STYLES ----- */
+.carousel-item img {
+    transition: transform 10s ease;
+    transform-origin: center;
+}
+
+.owl-item.active .carousel-item img {
+    transform: scale(1.03);
+}
+
+.custom-navigation {
+    text-align: center;
+}
+
+.custom-prev-btn, .custom-next-btn {
+    background-color: #fff;
+    color: black;
+    border: none;
+    margin: 0 10px;
+    font-size: 24px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.custom-prev-btn:hover, .custom-next-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+
+.owl-theme .owl-dots {
+    display: block;
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+}
+
+.owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.owl-theme .owl-dots .owl-dot.active {
+    background: #ddd;
+}    
+
+
+/* ----- CHECKBOX STYLES ----- */
+.custom-checkbox{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    visibility: hidden;
+    position: absolute;
+}
+
+.custom-checkbox .checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #e2e2e2;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+    background-color: black;
+}
+
+.custom-checkbox .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    display: block;
+}
+
+.custom-checkbox .checkmark::after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
