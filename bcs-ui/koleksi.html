@@ -208,6 +208,11 @@
         object-position: center;
     }
 
+    .section-row.left-flex{
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
     .resp-page-section.left-flex{
         justify-content: center;
         align-items: flex-start;
@@ -645,6 +650,94 @@
     .link:hover{
         color: black;
     }
+
+    .koleksi-detail{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-top: 200px !important;
+    }
+
+    .koleksi-detail > .section-row > img{
+        margin-bottom: 40px;
+        width : 80vw;
+        height: 400px;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+        filter:blur(3px);
+    }
+
+    .koleksi-detail > .section-row:first-child > .koleksi-content{
+        margin-bottom: 40px;
+        position: absolute;
+        z-index: 3;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.6);
+        width: calc(80vw - 120px);
+        height: calc(400px - 80px);
+        border-radius: 10px;
+        padding: 40px 40px 40px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .koleksi-detail > .section-row > .koleksi-content > .koleksi-name{
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+
+    .koleksi-detail > .section-row > .koleksi-content > .koleksi-desc{
+        font-size: 18px;
+        width: 70%;
+        opacity: 0.7;
+    }
+
+    .koleksi-name{
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .koleksi-detail .koleksi-container{
+        width: 80vw;
+    }
+
+    .koleksi-detail .koleksi-container .tab-koleksi-link{
+        width: 282px;
+    }
+
+    .koleksi-detail .koleksi-container .tab-koleksi-link img{
+        width: 282px;
+    }
+
+    .filter-group{
+        display: flex;
+        gap: 20px;
+        color: grey;
+    }
+
+    .filter-icon{
+        font-size: 20px;
+        transition: 0.25s ease-in-out;
+    }
+
+    .filter-icon:hover{
+        color: black;
+    }
+
+    .koleksi{
+        margin-top: 110px !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .koleksi-container, .label-container,.komposer-container{
+        justify-content: center !important;
+        align-items: center !important;
+    }
 </style>
 
 <!-- CAROUSEL STYLE -->
@@ -810,88 +903,66 @@
         </nav>
         <!-- END UPPER NAV BAR -->
 
-        <div class="resp-page-section left-flex no-first komposer-detail">
-            <div class="section-row">
-                <img src="./assets/komposer1.jpeg"/>
-                <div class="section-col">
-                    <div class="komposer-name">YOASOBI</div>
-                    <div class="komposer-region">Japan</div>
-                    <div class="komposer-story">Kedua anggota Yoasobi memiliki karir musik yang aktif sebelum membentuk duo ini. Ayase, seorang produser, penulis lagu, dan mantan vokalis band rok Davici, mulai menggunakan Vocaloid untuk memproduksi lagu. Dia mengunggah lagu pertamanya, "Sentensei Assault Girl", di situs hos video Niconico pada tahun 2018 dan mendapatkan popularitas dengan lagu tahun 2019-nya "Last Resort". Kemudian, dia merilis debut extended play-nya yang berjudul Ghost City Tokyo pada bulan Desember tahun itu. Lilas Ikuta, tampil dengan nama panggung Ikura di Yoasobi, adalah penyanyi-penulis lagu dan anggota grup kover Plusonica dari 2017 hingga 2021.Dia merilis CD demo solonya: 15 no Omoi (2016), dan dua EP: Rerise (2018) dan Jukebox (2019) melalui label independen After School.</div>
-                    <div class="komposer-medsos">
-                        <a class="link">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a class="link">
-                            <i class="fa-brands fa-square-facebook"></i>
-                        </a>
-                        <a class="link">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
+        <div class="resp-page-section left-flex no-first koleksi">
+            <div class="section-col" style="width:80vw;">
+                <div class="section-row left-flex">
+                    <div class="section-title">Koleksi</div>
+                    <div class="filter-group">
+                        <div class="filter-icon"><i class="fa-solid fa-sort"></i> Sort By</div>
+                        
+                        <div class="filter-icon"><i class="fa-solid fa-filter"></i> Filter By</div>
                     </div>
                 </div>
-            </div>
-            <div class="section-col">
-                <div class="section-title">Partitur</div>
                 <div class="koleksi-container">
                     <a class="tab-koleksi-link">
                         <img src="./assets/cover1.jpg" />
-                        <div class="tab-koleksi-title">Merchandise ipsum</div>
-                        <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
+                        <div class="tab-koleksi-title">Partitur ipsum</div>
+                        <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
                     </a>
                     <a class="tab-koleksi-link">
                         <img src="./assets/cover2.jpg" />
-                        <div class="tab-koleksi-title">Merchandise ipsum</div>
-                        <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
+                        <div class="tab-koleksi-title">Partitur ipsum</div>
+                        <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
                     </a>
                     <a class="tab-koleksi-link">
                         <img src="./assets/cover3.jpg" />
-                        <div class="tab-koleksi-title">Merchandise ipsum</div>
-                        <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
+                        <div class="tab-koleksi-title">Partitur ipsum</div>
+                        <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
                     </a>
                     <a class="tab-koleksi-link">
                         <img src="./assets/cover4.jpg" />
-                        <div class="tab-koleksi-title">Merchandise ipsum</div>
-                        <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
+                        <div class="tab-koleksi-title">Partitur ipsum</div>
+                        <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
                     </a>
                     <a class="tab-koleksi-link">
                         <img src="./assets/cover5.jpg" />
-                        <div class="tab-koleksi-title">Merchandise ipsum</div>
-                        <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
+                        <div class="tab-koleksi-title">Partitur ipsum</div>
+                        <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
                     </a>
                     <a class="tab-koleksi-link">
                         <img src="./assets/cover1.jpg" />
-                        <div class="tab-koleksi-title">Merchandise ipsum</div>
-                        <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
+                        <div class="tab-koleksi-title">Partitur ipsum</div>
+                        <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
                     </a>
                     <a class="tab-koleksi-link">
                         <img src="./assets/cover2.jpg" />
-                        <div class="tab-koleksi-title">Merchandise ipsum</div>
-                        <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
+                        <div class="tab-koleksi-title">Partitur ipsum</div>
+                        <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
                     </a>
                     <a class="tab-koleksi-link">
                         <img src="./assets/cover3.jpg" />
-                        <div class="tab-koleksi-title">Merchandise ipsum</div>
-                        <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
+                        <div class="tab-koleksi-title">Partitur ipsum</div>
+                        <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
                     </a>
                     <a class="tab-koleksi-link">
                         <img src="./assets/cover4.jpg" />
-                        <div class="tab-koleksi-title">Merchandise ipsum</div>
-                        <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
+                        <div class="tab-koleksi-title">Partitur ipsum</div>
+                        <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
                     </a>
                     <a class="tab-koleksi-link">
                         <img src="./assets/cover5.jpg" />
-                        <div class="tab-koleksi-title">Merchandise ipsum</div>
-                        <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
-                    </a>
-                    <a class="tab-koleksi-link">
-                        <img src="./assets/cover1.jpg" />
-                        <div class="tab-koleksi-title">Merchandise ipsum</div>
-                        <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
-                    </a>
-                    <a class="tab-koleksi-link">
-                        <img src="./assets/cover2.jpg" />
-                        <div class="tab-koleksi-title">Merchandise ipsum</div>
-                        <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
+                        <div class="tab-koleksi-title">Partitur ipsum</div>
+                        <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
                     </a>
                 </div>
             </div>
