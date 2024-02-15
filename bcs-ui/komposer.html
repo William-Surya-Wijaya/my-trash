@@ -532,6 +532,70 @@
     .tab-container.active{
         display: block;
     }
+
+    .komposer-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-top: 20px;
+    }
+
+    .komposer-card{
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border: 1px solid #d2d2d2;
+        border-bottom: 4px solid #d2d2d2;
+        border-radius: 10px;
+        transition: 0.25s ease-in-out;
+        overflow: hidden;
+    }
+
+    .komposer-card > img{
+        aspect-ratio: 16/9;
+        width: 500px;
+        object-fit: cover;
+        object-position: center;
+        align-self: center;
+    }
+
+    .komposer-name{
+        margin-top: 15px;
+        padding: 0 20px;
+        font-size: 24px;
+        font-weight: bold;
+        color: black;
+    }
+
+    .komposer-region{
+        padding: 0 0 25px 20px;
+        color: grey;
+        font-size: 18px;
+    }
+
+    .komposer-go-to{
+        position: absolute;
+        background-color: black;
+        color: #e2e2e2;
+        font-size: 32px;
+        padding: 20px;
+        border-radius: 1000px;
+        z-index: 3;
+        transform: translate(550%, 270px);
+        transition: 0.3s ease-in-out;
+        opacity: 0;
+    }
+
+    .komposer-card:hover .komposer-go-to{
+        transform: translate(550%, 250px);
+        opacity: 1;
+    }
+
+    .komposer-card:hover{
+        background-color: #efefef;
+    }
 </style>
 
 <!-- CAROUSEL STYLE -->
@@ -698,169 +762,61 @@
         <!-- END UPPER NAV BAR -->
 
         <div class="resp-page-section left-flex no-first">
-            <div class="section-title">PENERBIT</div>
-            <hr/>
-            <div class="section-row flex-start">
-                <div class="min-col">
-                    <div class="filter-title">Filter Data</div>
-    
-                    <div class="filter-group" filter-target="fg-1">
-                        <div class="filter-name">Genre</div>
-                        <div class="filter-icon"><i class="fa-solid fa-chevron-up"></i></div>
-                    </div>
-                    <div id="fg-1" class="filter-list">
-                        <label class="custom-checkbox">
-                            <input type="checkbox" id="checkbox1" name="checkbox1">
-                            <span class="checkmark"></span>
-                            Baroque
-                        </label>
-                        <label class="custom-checkbox">
-                            <input type="checkbox" id="checkbox2" name="checkbox2">
-                            <span class="checkmark"></span>
-                            Classic
-                        </label>
-                        <label class="custom-checkbox">
-                            <input type="checkbox" id="checkbox3" name="checkbox3">
-                            <span class="checkmark"></span>
-                            Metal
-                        </label>
-                    </div>
-    
-                    <div class="filter-group" filter-target="fg-2">
-                        <div class="filter-name">Year</div>
-                        <div class="filter-icon"><i class="fa-solid fa-chevron-up"></i></div>
-                    </div>
-                    <div id="fg-2" class="filter-list">
-                        <label class="custom-checkbox">
-                            <input type="checkbox" id="checkbox1" name="checkbox1">
-                            <span class="checkmark"></span>
-                            2023
-                        </label>
-                        <label class="custom-checkbox">
-                            <input type="checkbox" id="checkbox2" name="checkbox2">
-                            <span class="checkmark"></span>
-                            2024
-                        </label>
-                    </div>
+            <div class="section-title">KOMPOSER</div>
+            <div class="komposer-container">
+                <div class="komposer-card">
+                    <img src="./assets/komposer1.jpeg"/>
+                    <div class="komposer-go-to"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    <div class="komposer-name">YOASOBI</div>
+                    <div class="komposer-region">Japan</div>
                 </div>
-
-                <div class="max-col">
-                    <div class="trigger-container">
-                        <div class="tab-trigger active" tab-target="partitur-tab">Partitur</div>
-                        <div class="tab-trigger" tab-target="merchandise-tab">Merchandise</div>
-                    </div>
-
-                    <!-- TAB KOLEKSI -->
-                    <div class="tab-container active" id="partitur-tab">
-                        <div class="koleksi-container">
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover1.jpg" />
-                                <div class="tab-koleksi-title">Partitur ipsum</div>
-                                <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover2.jpg" />
-                                <div class="tab-koleksi-title">Partitur ipsum</div>
-                                <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover3.jpg" />
-                                <div class="tab-koleksi-title">Partitur ipsum</div>
-                                <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover4.jpg" />
-                                <div class="tab-koleksi-title">Partitur ipsum</div>
-                                <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover5.jpg" />
-                                <div class="tab-koleksi-title">Partitur ipsum</div>
-                                <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover1.jpg" />
-                                <div class="tab-koleksi-title">Partitur ipsum</div>
-                                <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover2.jpg" />
-                                <div class="tab-koleksi-title">Partitur ipsum</div>
-                                <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover3.jpg" />
-                                <div class="tab-koleksi-title">Partitur ipsum</div>
-                                <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover4.jpg" />
-                                <div class="tab-koleksi-title">Partitur ipsum</div>
-                                <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover5.jpg" />
-                                <div class="tab-koleksi-title">Partitur ipsum</div>
-                                <div class="tab-koleksi-sub">Partitur ipsum dolor sit</div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- TAB MERCHANDISE -->
-                    <div class="tab-container" id="merchandise-tab">
-                        <div class="koleksi-container">
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover1.jpg" />
-                                <div class="tab-koleksi-title">Merchandise ipsum</div>
-                                <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover2.jpg" />
-                                <div class="tab-koleksi-title">Merchandise ipsum</div>
-                                <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover3.jpg" />
-                                <div class="tab-koleksi-title">Merchandise ipsum</div>
-                                <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover4.jpg" />
-                                <div class="tab-koleksi-title">Merchandise ipsum</div>
-                                <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover5.jpg" />
-                                <div class="tab-koleksi-title">Merchandise ipsum</div>
-                                <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover1.jpg" />
-                                <div class="tab-koleksi-title">Merchandise ipsum</div>
-                                <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover2.jpg" />
-                                <div class="tab-koleksi-title">Merchandise ipsum</div>
-                                <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover3.jpg" />
-                                <div class="tab-koleksi-title">Merchandise ipsum</div>
-                                <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover4.jpg" />
-                                <div class="tab-koleksi-title">Merchandise ipsum</div>
-                                <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
-                            </a>
-                            <a class="tab-koleksi-link">
-                                <img src="./assets/cover5.jpg" />
-                                <div class="tab-koleksi-title">Merchandise ipsum</div>
-                                <div class="tab-koleksi-sub">Merchandise ipsum dolor sit</div>
-                            </a>
-                        </div>
-                    </div>
+                <div class="komposer-card">
+                    <img src="./assets/komposer2.jpeg"/>
+                    <div class="komposer-go-to"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    <div class="komposer-name">KANG HAE RIN</div>
+                    <div class="komposer-region">Korea</div>
+                </div>
+                <div class="komposer-card">
+                    <img src="./assets/komposer3.jpg"/>
+                    <div class="komposer-go-to"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    <div class="komposer-name">MOZART</div>
+                    <div class="komposer-region">Indonesia</div>
+                </div>
+                <div class="komposer-card">
+                    <img src="./assets/komposer4.jpg"/>
+                    <div class="komposer-go-to"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    <div class="komposer-name">BEETHOVEN</div>
+                    <div class="komposer-region">Indonesia</div>
+                </div>
+                <div class="komposer-card">
+                    <img src="./assets/komposer1.jpeg"/>
+                    <div class="komposer-go-to"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    <div class="komposer-name">YOASOBI</div>
+                    <div class="komposer-region">Japan</div>
+                </div>
+                <div class="komposer-card">
+                    <img src="./assets/komposer2.jpeg"/>
+                    <div class="komposer-go-to"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    <div class="komposer-name">KANG HAE RIN</div>
+                    <div class="komposer-region">Korea</div>
+                </div>
+                <div class="komposer-card">
+                    <img src="./assets/komposer3.jpg"/>
+                    <div class="komposer-go-to"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    <div class="komposer-name">MOZART</div>
+                    <div class="komposer-region">Indonesia</div>
+                </div>
+                <div class="komposer-card">
+                    <img src="./assets/komposer1.jpeg"/>
+                    <div class="komposer-go-to"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    <div class="komposer-name">YOASOBI</div>
+                    <div class="komposer-region">Japan</div>
+                </div>
+                <div class="komposer-card">
+                    <img src="./assets/komposer2.jpeg"/>
+                    <div class="komposer-go-to"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    <div class="komposer-name">KANG HAE RIN</div>
+                    <div class="komposer-region">Korea</div>
                 </div>
             </div>
         </div>
