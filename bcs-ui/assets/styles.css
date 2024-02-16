@@ -501,6 +501,14 @@ hr{
     width: 15%;
 }
 
+.col-35{
+    width: 35%;
+}
+
+.col-65{
+    width: 65%; 
+}
+
 .max-col{
     width: 85%;
 }
@@ -652,7 +660,7 @@ hr{
     width: 100vw;
     justify-content: center !important;
     align-items: center !important;
-    margin-top: 200px !important;
+    margin-top: 150px !important;
 }
 
 .koleksi-detail > .section-row > img{
@@ -732,6 +740,170 @@ hr{
 .koleksi-container,.komposer-container{
     justify-content: center !important;
     align-items: center !important;
+}
+
+.breadcrumb{
+    font-size: 24px;
+}
+
+.penerbit-detail{
+    margin-top: 150px !important;
+}
+
+.prod-img-idx{
+    aspect-ratio: 3/4;
+    width: 450px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.prod-img-list{
+    width: 450px !important;
+}
+
+.prod-img-list img{
+    aspect-ratio: 3/4;
+    width: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+}
+
+.prod-name{
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.prod-desc{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.prod-hint{
+    font-size: 16px;
+    color: grey;
+    font-style: italic;
+}
+
+.prod-view{
+    font-size: 20px;
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: grey;
+}
+
+.prod-view > i{
+    transition: 0.25s ease-in-out;
+}
+
+.prod-view > i:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.prod-detail-name{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.prod-detail-type, .prod-detail-komposer{
+    font-size: 16px;
+    color: grey;
+}
+
+.prod-detail-desc{
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.prod-detail-price{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.qty-group{
+    width: max-content;
+    margin: auto;
+    border-radius: 5px;
+    border: 1px solid rgb(133, 133, 133);
+    overflow: hidden;
+    padding: 2px 10px;
+}
+
+.qty-group > button{
+    font-size: 18px;
+    font-weight: bold;
+    border: 0;
+    background-color: transparent;
+}
+
+.qty-group > input{
+    font-size: 18px;
+    width: 50px;
+    text-align: center;
+    border: 0;
+    background-color: transparent;
+}
+
+.qty-group > input:focus{
+    outline: none;
+}
+
+table.prod-showcase{
+    margin-top: 30px;
+}
+
+table.prod-showcase th{
+    font-size: 24px;
+    padding: 8px;
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+}
+
+table.prod-showcase th:first-child{
+    border-radius: 8px 0 0 0;
+}
+
+table.prod-showcase th:last-child{
+    border-radius: 0 8px 0 0;
+}
+
+table.prod-showcase tbody tr td{
+    border-bottom: 1px solid rgb(133, 133, 133) !important;
+    padding: 8px 12px;
+}
+
+.prod-caution{
+    margin: 10px 0;
+    font-size: 16px;
+    color: #b4a200;
+    font-style: italic;
+}
+
+.button-cart{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.button-add-cart{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 9px 18px;
+    background-color: black;
+    border: 0;
+    color: white;
+    border-radius: 6px;
 }
 
 
