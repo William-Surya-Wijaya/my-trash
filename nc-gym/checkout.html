@@ -1,0 +1,499 @@
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    *{
+        font-family: "Outfit", sans-serif;
+        font-optical-sizing: auto;
+        user-select: none;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #2d2d2d; /* Track background */
+    }
+    
+    /* This targets the scrollbar handle */
+    ::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background: white; /* Handle background */
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    
+    /* Setting the width of the scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px; /* Width of the scrollbar */
+    }
+
+    body{
+        background-color: #2d2d2d;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-page{
+        background-color: #ffffff;
+        width: 560px;
+        height: max-content;
+        min-height: calc(100vh - 24px);
+        padding: 24px 24px 0 24px;
+    }
+
+    .row{
+        display: flex;
+    }
+
+    .justify-space-between{
+        justify-content: space-between;
+    }
+
+    .align-flex-start{
+        align-items: flex-start;
+    }
+
+    .btn-square{
+        width: 46px;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: 5px 6px #88888838;
+        transition: 0.25s ease-in-out;
+    }
+
+    .btn-square:hover{
+        cursor: pointer;
+        box-shadow: 5px 10px #8888887d;
+    }
+
+    .btn-muted{
+        background-color: #f6f6f8;
+        color: #767576;
+    }
+
+    .btn-info{
+        background-color: #161719;
+        color: #f6f6f8;
+    }
+
+    .welcome-title{
+        font-size: 56px;
+        letter-spacing: 1px;
+        color: #0f0f0f;
+    }
+
+    .welcome-sub{
+        font-size: 18px;
+        letter-spacing: 1px;
+        color: grey;
+    }
+
+    .dashboard-grid{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dashboard-title{
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #0f0f0f;
+    }
+
+    .dashboard-sub{
+        font-size: 18px;
+        letter-spacing: 1px;
+        color: grey;
+    }
+
+    .dashboard-package-group{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: #f6f6f8;
+        border-radius: 8px;
+        padding: 8px 16px;
+        transition: 0.25s ease-in-out;
+        border: 1px solid #d3d3d3;
+    }
+
+    .dashboard-package-group:hover, .rules-card:hover{
+        cursor: pointer;
+        box-shadow: 3px 4px #8888887d;
+    }
+
+    .package-icon{
+        font-size: 40px;
+        background-color: #161719;
+        padding: 4px;
+        border-radius: 8px;
+    }
+
+    .package-detail{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .package-detail-title{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .package-detail-period{
+        font-size: 18px;
+    }
+
+    .dashboard-package-more{
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        border-radius: 4px;
+        padding: 4px 8px;
+        background-color: #8af046;
+    }
+
+    .mt-10{
+        margin-top: 10px;
+    }
+
+    .mt-20{
+        margin-top: 20px;
+    }
+
+    .mt-30{
+        margin-top: 30px;
+    }
+
+    .mt-40{
+        margin-top: 40px;
+    }
+
+    .mt-50{
+        margin-top: 50px;
+    }
+
+    .my-10{
+        margin: 10px 0;
+    }
+
+    .my-20{
+        margin: 20px 0;
+    }
+
+    .nav-bar{
+        width: calc(560px - 64px);
+        height: 64px;
+        position: fixed;
+        bottom: 16px;
+        background-color: #161719;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 32px;
+    }
+
+    .nav-link{
+        color: #f6f6f8;
+        font-size: 24px;
+        transition: 0.25s ease-in-out;
+    }
+
+    .nav-link:hover{
+        cursor: pointer;
+        font-size: 30px;
+    }
+
+    .nav-link.active{
+        color: #f04647;
+    }
+
+    .nav-link.main-link{
+        color: #161719;
+        background-color: #f6f6f8;
+        border:4px solid #161719;
+        border-radius: 1000px;
+        aspect-ratio: 1/1;
+        width: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+    }
+
+    .nav-link.main-link:hover{
+        width: 76px;
+        font-size: 38px;
+    }
+
+    .dashboard-rules-grid{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 12px;
+        row-gap: 12px;
+        justify-content: center;
+    }
+
+    .rules-card{
+        width: 140px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 16px;
+        border-radius: 16px;
+        background-color: #f6f6f8;
+        gap: 10px;
+        transition: 0.25s ease-in-out;
+        border: 1px solid #d3d3d3;
+    }
+
+    .rules-icon{
+        font-size: 42px;
+    }
+
+    .sticky-on-top{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 16px;
+        z-index: 5;
+    }
+
+    .package-container{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .package-name{
+        font-size: 24px;
+    }
+
+    .footer{
+        width: 560px;
+        height: 100px;
+        background-color: #ffffff;
+        padding: 24px 24px 0 24px;
+    }
+
+    .checkout-package{
+        display: flex;
+        width: 100%;
+        gap: 20px;
+        padding: 16px 0;
+        border-top: 1px solid #a6a6a6;
+        border-bottom: 1px solid #a6a6a6;
+    }
+
+    .package-row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .checkout-package .package-name{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .package-price{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .payment-gateway-logo{
+        width: 100px;
+    }
+
+    .payment-bar{
+        position: fixed;
+        bottom: 0;
+        width: 560px;
+        padding: 20px 0 8px 0;
+        margin-bottom: 16px;
+        border-top: 1px solid grey;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btn-large{
+        padding: 8px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: 5px 6px #88888838;
+        transition: 0.25s ease-in-out;
+    }
+
+    .payment-title{
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .payment-total{
+        font-size: 20px;
+    }
+
+    .btn-large:hover{
+        cursor: pointer;
+        box-shadow: 5px 10px #8888887d;
+    }
+
+    .popup-qr.active{
+        display: flex;
+    }
+
+    @media screen and (max-width: 600px) {
+
+        ::-webkit-scrollbar-track {
+            background: white; /* Track background */
+        }
+        
+        /* This targets the scrollbar handle */
+        ::-webkit-scrollbar-thumb {
+            border-radius: 6px;
+            background: #161719; /* Handle background */
+        }
+        
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        /* Setting the width of the scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px; /* Width of the scrollbar */
+        }
+
+        body{
+            overflow-x: hidden;
+        }
+
+        .mobile-page{
+            width: calc(100vw - 48px);
+            padding: 20px 24px 8px 24px;
+        }
+
+        .payment-bar{
+            width: calc(100vw - 48px);
+            padding: 20px 0 8px 0;
+            margin-bottom: 16px;
+        }
+
+        .footer{
+            width: calc(100vw - 48px);
+            height: 100px;
+            background-color: #ffffff;
+            padding: 24px 24px 0 24px;
+        }
+
+        .nav-bar{
+            width: calc(100vw  - 64px - 48px);
+            padding: 0 32px;
+        }
+
+        .dashboard-rules-grid{
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 28px;
+            row-gap: 28px;
+            justify-content: center;
+        }
+        .rules-card{
+            width: 34vw;
+        }
+    }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- FA ICON IMPORTS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="mobile-page">
+            <div class="payment-bar">
+                <div class="payment-col">
+                    <div class="payment-title">Total Pembayaran</div>
+                    <div class="payment-total">Rp 50.000,-</div>
+                </div>
+                <div class="payment-col">
+                    <button class="btn-large btn-info">
+                        Bayar
+                    </button>
+                </div>
+            </div>
+
+            <div class="row justify-space-between align-flex-start sticky-on-top mt-10">
+                <div></div>
+                <button class="btn-square btn-info">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="welcome-title mt-20">Pembayaran 💵</div>
+            <div class="welcome-sub">Jangan lupa simpan bukti pembayaranmu!</div>
+
+            <div class="dashboard-title mt-40">Paket pilihamu</div>
+            <div class="dashboard-sub">Pastikan paket yang kamu pilih sesuai dengan paket yang ingin kamu beli.</div>
+
+            <div class="checkout-package mt-20">
+                <div class="package-icon">💪🏻</div>
+                <div class="package-detail">
+                    <div class="package-row">
+                        <div class="package-name">Gym membership</div>
+                        <div class="package-price">Rp. 50.000,-</div>
+                    </div>
+                    <div class="package-row">
+                        <div class="package-desc">1 Bulan</div>
+                        <div class="package-hint">No Refund</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-title mt-40">Penting</div>
+            <div class="dashboard-sub">Pastikan kamu membaca beberapa hal penting berikut.</div>
+
+            <div class="checkout-package mt-20">
+                <div>Pembelian paket tidak dapat direfund. (uang tidak dapat dikembalikan setelah pembelian paket)</div>
+            </div>
+
+            <div class="checkout-package mt-20">
+                <div>Bila kamu sudah memiliki paket serupa maka, pembelian paket baru akan menjadi perpanjangan periode dari paket sebelumnya.</div>
+            </div>
+
+            <div class="checkout-package mt-20">
+                <div>Pembayaran terintegrasi dengan</div>
+                <img class="payment-gateway-logo" src="./207674.svg">
+            </div>
+        </div>
+        <div class="footer"></div>
+    </body>
+</html>
+
+<script>
+
+</script>

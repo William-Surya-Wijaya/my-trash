@@ -1,0 +1,469 @@
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    *{
+        font-family: "Outfit", sans-serif;
+        font-optical-sizing: auto;
+        user-select: none;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #2d2d2d; /* Track background */
+    }
+    
+    /* This targets the scrollbar handle */
+    ::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background: white; /* Handle background */
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    
+    /* Setting the width of the scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px; /* Width of the scrollbar */
+    }
+
+    body{
+        background-color: #2d2d2d;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-page{
+        background-color: #ffffff;
+        width: 560px;
+        height: max-content;
+        min-height: calc(100vh - 24px);
+        padding: 24px 24px 0 24px;
+    }
+
+    .row{
+        display: flex;
+    }
+
+    .justify-space-between{
+        justify-content: space-between;
+    }
+
+    .align-flex-start{
+        align-items: flex-start;
+    }
+
+    .btn-square{
+        width: 46px;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: 5px 6px #88888838;
+        transition: 0.25s ease-in-out;
+    }
+
+    .btn-square:hover{
+        cursor: pointer;
+        box-shadow: 5px 10px #8888887d;
+    }
+
+    .btn-muted{
+        background-color: #f6f6f8;
+        color: #767576;
+    }
+
+    .btn-info{
+        background-color: #161719;
+        color: #f6f6f8;
+    }
+
+    .welcome-title{
+        font-size: 56px;
+        letter-spacing: 1px;
+        color: #0f0f0f;
+    }
+
+    .welcome-sub{
+        font-size: 18px;
+        letter-spacing: 1px;
+        color: grey;
+    }
+
+    .dashboard-grid{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dashboard-title{
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #0f0f0f;
+    }
+
+    .dashboard-sub{
+        font-size: 18px;
+        letter-spacing: 1px;
+        color: grey;
+    }
+
+    .dashboard-package-group{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: #f6f6f8;
+        border-radius: 8px;
+        padding: 8px 16px;
+        transition: 0.25s ease-in-out;
+        border: 1px solid #d3d3d3;
+    }
+
+    .dashboard-package-group:hover, .rules-card:hover{
+        cursor: pointer;
+        box-shadow: 3px 4px #8888887d;
+    }
+
+    .package-icon{
+        font-size: 40px;
+        background-color: #161719;
+        padding: 4px;
+        border-radius: 8px;
+    }
+
+    .package-detail{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .package-detail-title{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .package-detail-period{
+        font-size: 18px;
+    }
+
+    .dashboard-package-more{
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        border-radius: 4px;
+        padding: 4px 8px;
+        background-color: #8af046;
+    }
+
+    .mt-10{
+        margin-top: 10px;
+    }
+
+    .mt-20{
+        margin-top: 20px;
+    }
+
+    .mt-30{
+        margin-top: 30px;
+    }
+
+    .mt-40{
+        margin-top: 40px;
+    }
+
+    .mt-50{
+        margin-top: 50px;
+    }
+
+    .my-10{
+        margin: 10px 0;
+    }
+
+    .my-20{
+        margin: 20px 0;
+    }
+
+    .nav-bar{
+        width: calc(560px - 64px);
+        height: 64px;
+        position: fixed;
+        bottom: 16px;
+        background-color: #161719;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 32px;
+    }
+
+    .nav-link{
+        color: #f6f6f8;
+        font-size: 24px;
+        transition: 0.25s ease-in-out;
+    }
+
+    .nav-link:hover{
+        cursor: pointer;
+        font-size: 30px;
+    }
+
+    .nav-link.active{
+        color: #f04647;
+    }
+
+    .nav-link.main-link{
+        color: #161719;
+        background-color: #f6f6f8;
+        border:4px solid #161719;
+        border-radius: 1000px;
+        aspect-ratio: 1/1;
+        width: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+    }
+
+    .nav-link.main-link:hover{
+        width: 76px;
+        font-size: 38px;
+    }
+
+    .dashboard-rules-grid{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 12px;
+        row-gap: 12px;
+        justify-content: center;
+    }
+
+    .rules-card{
+        width: 140px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 16px;
+        border-radius: 16px;
+        background-color: #f6f6f8;
+        gap: 10px;
+        transition: 0.25s ease-in-out;
+        border: 1px solid #d3d3d3;
+    }
+
+    .rules-icon{
+        font-size: 42px;
+    }
+
+    .sticky-on-top{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 16px;
+        z-index: 5;
+    }
+
+    .package-container{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .package-name{
+        font-size: 24px;
+    }
+
+    .footer{
+        width: 560px;
+        height: 100px;
+        background-color: #ffffff;
+        padding: 24px 24px 0 24px;
+    }
+
+    @media screen and (max-width: 600px) {
+
+        ::-webkit-scrollbar-track {
+            background: white; /* Track background */
+        }
+        
+        /* This targets the scrollbar handle */
+        ::-webkit-scrollbar-thumb {
+            border-radius: 6px;
+            background: #161719; /* Handle background */
+        }
+        
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        /* Setting the width of the scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px; /* Width of the scrollbar */
+        }
+
+        body{
+            overflow-x: hidden;
+        }
+
+        .mobile-page{
+            width: calc(100vw - 48px);
+            padding: 20px 24px 8px 24px;
+        }
+
+        .footer{
+            width: calc(100vw - 48px);
+            height: 100px;
+            background-color: #ffffff;
+            padding: 24px 24px 0 24px;
+        }
+
+        .nav-bar{
+            width: calc(100vw  - 64px - 48px);
+            padding: 0 32px;
+        }
+
+        .dashboard-rules-grid{
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 28px;
+            row-gap: 28px;
+            justify-content: center;
+        }
+        .rules-card{
+            width: 34vw;
+        }
+    }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- FA ICON IMPORTS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="mobile-page">
+            <div class="nav-bar">
+                <a class="nav-link"><i class="fa-solid fa-house"></i></a>
+                <a class="nav-link active"><i class="fa-solid fa-store"></i></a>
+                <a class="nav-link main-link"><i class="fa-solid fa-qrcode"></i></a>
+                <a class="nav-link"><i class="fa-solid fa-clock-rotate-left"></i></a>
+                <a class="nav-link"><i class="fa-solid fa-circle-question"></i></a>
+            </div>
+
+            <div class="row justify-space-between align-flex-start sticky-on-top mt-10">
+                <button class="btn-square btn-muted">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <button class="btn-square btn-info">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+            </div>
+            <div class="welcome-title mt-20">Belanja 🛒</div>
+            <div class="welcome-sub">Berikut paket paket yang bisa kamu ikuti!</div>
+
+            <div class="dashboard-title mt-40">Visit</div>
+            <div class="package-container mt-20">
+
+                <div class="dashboard-package-group">
+                    <div class="package-icon">💪🏻</div>
+                    <div class="package-detail">
+                        <div class="package-name">Gym Visit</div>
+                        <div class="package-period">1 Kali Masuk</div>
+                    </div>
+                    <div class="dashboard-package-more">Beli <i class="fa-solid fa-circle-plus"></i></div>
+                </div>
+
+                <div class="dashboard-package-group">
+                    <div class="package-icon">💪🏻</div>
+                    <div class="package-detail">
+                        <div class="package-name">Trainer Pria / Wanita</div>
+                        <div class="package-period">1 Pertemuan</div>
+                    </div>
+                    <div class="dashboard-package-more">Beli <i class="fa-solid fa-circle-plus"></i></div>
+                </div>
+            </div>
+
+            <div class="dashboard-title mt-40">Membership</div>
+            <div class="package-container mt-20">
+                <div class="dashboard-package-group">
+                    <div class="package-icon">💪🏻</div>
+                    <div class="package-detail">
+                        <div class="package-name">Gym Membership</div>
+                        <div class="package-period">1 Bulan</div>
+                    </div>
+                    <div class="dashboard-package-more">Beli <i class="fa-solid fa-circle-plus"></i></div>
+                </div>
+
+                <div class="dashboard-package-group">
+                    <div class="package-icon">💪🏻</div>
+                    <div class="package-detail">
+                        <div class="package-name">Gym Membership</div>
+                        <div class="package-period">3 Bulan</div>
+                    </div>
+                    <div class="dashboard-package-more">Beli <i class="fa-solid fa-circle-plus"></i></div>
+                </div>
+
+                <div class="dashboard-package-group">
+                    <div class="package-icon">💪🏻</div>
+                    <div class="package-detail">
+                        <div class="package-name">Gym Membership</div>
+                        <div class="package-period">6 Bulan</div>
+                    </div>
+                    <div class="dashboard-package-more">Beli <i class="fa-solid fa-circle-plus"></i></div>
+                </div>
+            </div>
+
+            <div class="dashboard-title mt-40">Trainer</div>
+            <div class="package-container mt-20">
+                <div class="dashboard-package-group">
+                    <div class="package-icon">💪🏻</div>
+                    <div class="package-detail">
+                        <div class="package-name">Trainer Pria</div>
+                        <div class="package-period">8 Pertemuan / Bulan</div>
+                    </div>
+                    <div class="dashboard-package-more">Beli <i class="fa-solid fa-circle-plus"></i></div>
+                </div>
+
+                <div class="dashboard-package-group">
+                    <div class="package-icon">💪🏻</div>
+                    <div class="package-detail">
+                        <div class="package-name">Trainer Pria</div>
+                        <div class="package-period">12 Pertemuan / Bulan</div>
+                    </div>
+                    <div class="dashboard-package-more">Beli <i class="fa-solid fa-circle-plus"></i></div>
+                </div>
+
+                <div class="dashboard-package-group">
+                    <div class="package-icon">💪🏻</div>
+                    <div class="package-detail">
+                        <div class="package-name">Trainer Pria</div>
+                        <div class="package-period">16 Pertemuan / Bulan</div>
+                    </div>
+                    <div class="dashboard-package-more">Beli <i class="fa-solid fa-circle-plus"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </body>
+</html>
+
+<script>
+
+</script>
