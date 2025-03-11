@@ -35,26 +35,26 @@ def generate_lyric_clip(lyrics, font_path, font_size=50, color='white'):
 
 def main():
     video = VideoFileClip('bg_4.mp4')
-    audio = AudioFileClip('audio_2.mp3')
+    audio = AudioFileClip('yuika17.mp3')
 
     lyrics = [
-        ("そう願っても無駄だから", "Tidak ada gunanya berharap", 0.5, 5.5),
-        ("グッバイ", "Selamat tinggal", 5.5, 6.5),
-        ("君の運命のヒトは僕じゃない", "Aku bukan orang yang kau impikan", 6.5, 11),
-        ("辛いけど否めない", "Menyakitkan tapi tak bisa kusangkal", 11, 14),
-        ("でも離れ難いのさ", "Tapi sulit juga untuk meninggalkan", 14, 17),
-        ("その髪に触れただけで 痛いや", "Menyentuh rambutmu saja terasa menyakitkan", 17, 23.5),
-        ("いやでも", "akan tetapi", 23.5, 24),
-        ("甘いな いやいや", "Begitu harum, tidak, tidak", 24, 26),
+        ("拝啓、過去のわたしへ", "Untuk diriku dimasa lalu", 0.5, 3),
+        ("今のわたしは", "Diriku sekarang", 3, 6.5),
+        ("ずっと夢見ていたこと叶えてるよ", "Sedang mengejar mimpi yang ada sejak dulu", 6.5, 12),
+        ("拝啓、今のわたしへ", "Untuk diriku dimasa depan", 12, 15),
+        ("こんな情けない", "Lagu yang menyedihkan ini", 15, 18),
+        ("歌だって歌えばいいよ", "Bisa dinyanyikan", 18, 21),
+        ("それがわたしだから", "Karena aku yang menyanyikan", 21, 24),
+        ("拝啓、未来のわたしへ", "Untuk diriku dimasa depan", 25, 27.5),
+        ("今そこは", "Sekarang", 27.5, 30.5),
+        ("どんなきれいな世界が", "Dunia yang indah ini", 30.5, 33),
+        ("広がっていますか", "Sedang membentang", 33, 36.5),
+        ("拝啓、今のわたしへ", "Untuk diriku dimasa depan", 36.5, 39.5),
+        ("今ここが", "Sekarang", 39.5, 42.5),
+        ("どんな世界よりも", "Di sini", 42.5,45.5),
+        ("幸せでした", "Ku bahagia", 45.5, 51.5),
+        ("『ユイカ』", "17さいのうた。", 53.5, 56.5),
         
-        ("グッバイ", "Selamat tinggal", 26, 27),
-        ("それじ", "Kalau begitu", 27, 28),
-        ("ゃ僕にとって君は何？", "Apakah artimu bagiku?", 28, 32),
-        ("答えは分からない", "Aku tak mengetahui jawabannya", 32, 34.5),
-        ("分かりたくもないのさ", "Aku juga tak ingin tahu jawabannya", 34.5, 38),
-        ("たったひとつ", "Tapi satu hal yang pasti", 38, 40),
-        ("確かなことがあるとするのならば", "Jika ada sesuatu yang pasti", 40, 46),
-        ("「君は綺麗だ」", "Kau begitu cantik", 46, 51),
     ]
 
     font_path = "fonts/NotoSansJP-Regular.ttf"
@@ -64,7 +64,7 @@ def main():
     final = CompositeVideoClip([video, *lyric_clips])
     final = final.set_audio(audio)
 
-    final.write_videofile('output_video_3.mp4', codec='libx264', fps=30)
+    final.write_videofile('output_video_4.mp4', codec='libx264', fps=30)
 
 if __name__ == "__main__":
     main()
