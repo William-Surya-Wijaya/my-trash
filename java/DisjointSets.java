@@ -1,7 +1,7 @@
 import java.util.*;
  
 public class DisjointSets{
-    static Map<String, SetElement> elementMap = new HashMap<>();;
+    static Map<String, SetElement> elementMap = new HashMap<>();
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
  
@@ -65,6 +65,10 @@ public class DisjointSets{
     static String findSet(String elementName){
         String parent = elementMap.get(elementName).getParent();
         if(!elementName.equals(parent)){
+            // ---------------------------
+            String root = findSet(parent);
+            elementMap.get(elementName).setParent(root);
+            // ---------------------------
             return findSet(parent);
         }
         return elementName;
